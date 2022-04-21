@@ -1,0 +1,18 @@
+doctype html
+html(lang="en")
+  include head.pug
+
+  body
+    include header.pug
+    nav.categories
+      a(href="/")
+        img#home(src="/images/icon-home.svg", width="32" alt="go home")
+      for cat in categories
+        a(href="/cards/"+cat)
+          img(src="/images/logo-"+cat+".png", width="32", alt="filter on " + cat + " methods")
+
+    main.overview
+      h1= message
+      h2 Error #{error.status}
+
+    include footer.pug

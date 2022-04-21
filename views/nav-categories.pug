@@ -1,0 +1,15 @@
+nav.categories
+  case category
+    when 'home'
+      button.active(data-filter='*', data-sort-value="id")
+        img#home(src="/images/icon-home.svg", width="32" alt="go home")
+    default
+      button(data-filter='*', data-sort-value="id")
+        img#home(src="/images/icon-home.svg", width="32" alt="go home")
+  for cat in categories
+    if cat == category
+      button.active(data-filter=cat, data-sort-value="id")
+        img(src="/images/logo-"+cat+".png", width="32", alt="filter on " + cat + " methods")
+    else
+      button(data-filter=cat, data-sort-value="id")
+        img(src="/images/logo-"+cat+".png", width="32", alt="filter on " + cat + " methods")
