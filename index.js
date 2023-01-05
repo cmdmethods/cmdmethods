@@ -1,11 +1,49 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require('express');
+const config = require('./config/config.json');
+const home  = require('./routes/home')
+const cards = require('./routes/cards')
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+/*****************************************************
+ * Define some constants and variables
+ ****************************************************/
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+const app = express();
+
+/*****************************************************
+ * Middleware
+ ****************************************************/
+app.use(express.static('public'));
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+
+/*****************************************************
+ * Set template engine
+ ****************************************************/
+app.set('view engine', 'ejs');
+
+/*****************************************************
+ * Routes
+ ****************************************************/
+app.use('/', home)
+app.use('/cards', cards)
+
+
+/*****************************************************
+ * If no routes give response, show 404 Page
+ ****************************************************/
+
+app.use(function (req, res) {
+    res.status(404).render('404');
+});
+
+
+/*****************************************************
+ * Start webserver
+ ****************************************************/
+
+app.listen(config.port, () => {
+    console.log('==================================================\n\n')
+    console.log(`Webserver running on http://localhost:${config.port}\n\n`);
+    console.log('==================================================\n\n')
+});
+
