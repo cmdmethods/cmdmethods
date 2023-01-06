@@ -1,7 +1,8 @@
 const express = require('express');
 const config = require('./config/config.json');
-const home  = require('./routes/home')
-const cards = require('./routes/cards')
+const home  = require('./routes/home');
+const cards = require('./routes/cards');
+const about = require('./routes/about');
 
 /*****************************************************
  * Define some constants and variables
@@ -24,8 +25,9 @@ app.set('view engine', 'ejs');
 /*****************************************************
  * Routes
  ****************************************************/
-app.use('/', home)
-app.use('/cards', cards)
+app.use('/', home);
+app.use('/cards', cards);
+app.use('/about', about);
 
 
 /*****************************************************
