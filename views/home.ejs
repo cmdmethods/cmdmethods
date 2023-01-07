@@ -12,14 +12,19 @@
         <div class="grid">
             <section class="category-description home stamp">
                 <header>
-                    <div class="category-icon home"></div>
+                    <img id="home" src="/img/icon-home.svg" width="32" alt="home">
                     <h1>CMD Methods Pack</h1>
                 </header>
-                <p>This pack supports your design research planning in any CMD project. Browse through the cards to find
-                    methods that suit your needs. Pick a combination of methods belonging to different research
-                    strategies to balance your research plan. You can use this card set in many ways. It is really up to
-                    you!</p><button id="sort-alphatical">Sort alphabetical</button><button id="sort-strategy">Sort by
-                    research strategy</button>
+                <footer>
+                    <p>This pack supports your design research planning in any CMD project. Browse through the cards to
+                        find
+                        methods that suit your needs. Pick a combination of methods belonging to different research
+                        strategies to balance your research plan. You can use this card set in many ways. It is really
+                        up to
+                        you!</p>
+                </footer>
+                <button id="sort-alphatical">Sort alphabetical</button>
+                <button id="sort-strategy">Sort by research strategy</button>
             </section>
 
 
@@ -42,7 +47,7 @@
             <section class="card grid-item <%= card.strategy%>" id="benchmark-creation">
                 <a href="/cards/<%= card.strategy%>/benchmark-creation">
                     <header>
-                        <div class="category-icon"></div>
+                        <img class="logo" src="/img/logo-<%= card.strategy%>.png" alt="logo <%= card.strategy%>">
                         <h1><%= card.name%></h1>
                     </header>
                     <div><img src="<%= card.image %>" alt="Benchmark creation" width="<%= card.widhth %>"

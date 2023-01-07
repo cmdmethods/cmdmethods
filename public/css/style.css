@@ -1,60 +1,327 @@
-img {
+/* =============================================================================
+    author: Sonja Rouwhorst
+   =========================================================================== */
+
+/*  =============================================================================
+    COLORS
+    =========================================================================== */
+:root {
+  --main-bg-color: #f1f1f1;
+  --main-link-color:  #4d86b3;
+  --home-bg-color: #e1e1e1;
+  --neutral-color:  #96c8ea;
+  --neutral-bg-color:  #c5daeb;
+  --library-color:  #a8ce3b;
+  --library-bg-color: #d8e8ad;
+  --field-color: #52c3c4;
+  --field-bg-color: #b8e3e2;
+  --lab-color:  #797dbc;
+  --lab-bg-color: #cccae2;
+  --showroom-color:  #ffd11d;
+  --showroom-bg-color: #fbe9a0;
+  --workshop-color: #25bfed;
+  --workshop-bg-color: #a4e2f5;
+  --stepping-stones-color:  #ef4e8c;
+  --steppgin-stones-bg-color: #f3b2d3;
+}
+
+
+.library h1, .library h2, .library h3, .library aside, .library .sliders{
+    color: var(--library-color);
+}
+.field h1, .field h2, .field h3, .field aside, .field .sliders{
+    color: var(--field-color);
+}
+.lab h1, .lab h2, .lab h3, .lab aside, .liblabrary .sliders{
+    color: var(--lab-color);
+}
+.showroom h1, .showroom h2, .showroom h3, .showroom aside, .showroom .sliders{
+    color: var(--showroom-color);
+}
+.workshop h1, .workshop h2, .workshop h3, .workshop aside, .workshop .sliders{
+    color: var(--workshop-color);
+}
+.stepping-stones h1, .stepping-stones h2, .stepping-stones h3, .stepping-stones aside, .stepping-stones .sliders{
+    color: var(--stepping-stones-color);
+}
+
+
+/* =============================================================================
+    GENERAL
+   =========================================================================== */
+body {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    background: var(--main-bg-color);
+}
+main {
+    padding: 1rem;
+}
+h1 {
+    font-family: "Open Sans Condensed", sans-serif;
+    font-weight: 300;
+}
+h2, h3, h4, h5, h6 {
+    font-family: "Open Sans Condensed", sans-serif;
+    font-weight: 700;
+}
+h2 {
+    font-size: 1rem;
+}
+p {
+    line-height: 1.2rem;
+}
+ol, ul, dl {
+    padding-left: 1.5rem;
+}
+iframe, img {
     max-width: 100%;
 }
-.home {
+a, a:visited {
+    text-decoration: none;
+    color: var(--main-link-color)
+}
+a:hover {
+    text-decoration: underline;
+}
 
-}
-.library {
-
-}
-.field {
-
-}
-.workshop {
-
-}
-.lab {
-
-}
-.showroom {
-    
-}
-.grid {
-
-}
-.grid-item {
-
-}
-.card {
-
-}
-.category-icon {
-
-}
-.category-description {
-
-}
-.button {
-
-}
-.pin{
-
-}
-.unpin {
-
-}
-.call-to-action {
-
-}
-.logo {
-    width: 50px;
-}
-.float-right {
-    float: right;
-}
-.float-left {
-    float: left;
-}
 .indent {
+  display: block;
+  margin-left: 1.5rem;
+}
 
+/* .float-left {
+  float: left;
+  margin-right: 1rem;
+}
+*/
+.float-right {
+  float: right;
+  margin-left: 1rem;
+} 
+
+button, .button {
+  font-size: .8rem;
+  display: inline-block;
+  text-align: center;
+  font-family: inherit;
+  border: 0;
+  width: 100%;
+  padding: .5rem;
+  border-radius: .8rem;
+  background-color: var(--neutral-color);
+  color: white;
+}
+
+.hidden {
+  display: none;
+  line-height: 0;
+}
+
+/* =============================================================================
+    HEADER
+   =========================================================================== */
+
+body>header {
+  background: var(--neutral-bg-color);
+  padding: 1rem 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  z-index: 2;
+}
+
+body>header h1 {
+  color: black;
+  line-height: 1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0 1rem 0 0;
+}
+
+body>header a {
+  text-decoration: none;
+}
+
+body>header>a:hover {
+    text-decoration: none;
+}
+
+body>header h2 {
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 0;
+  line-height: 1em;
+  /* padding-bottom: 6px; */
+}
+
+@media (max-width: 480px) {
+  body>header {
+    position: static;
+  }
+  body>header h2 {
+    display: none;
+  }
+}
+
+/* =============================================================================
+    NAV
+   =========================================================================== */
+
+body>nav {
+    margin-top: 90px;
+}
+
+@media (max-width: 480px) {
+  body>nav {
+    margin-top: auto;
+  }
+}
+
+/* =============================================================================
+    CATEGORY DESCRIPTION
+   =========================================================================== */
+.category-description.home {
+    background-color: var(--home-bg-color);
+}
+.category-description.library {
+    background-color: var(--library-bg-color);
+}
+.category-description.field {
+    background-color: var(--field-bg-color);
+}
+.category-description.lab {
+    background-color: var(--lab-bg-color);
+}
+.category-description.showroom {
+    background-color: var(--showroom-bg-color);
+}
+.category-description.workshop {
+    background-color: var(--workshop-bg-color);
+}
+.category-description.stepping-stones {
+    background-color: var(--steppgin-stones-bg-color);
+}
+
+.category-description {
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.category-description h1 {
+  color: black;
+}
+
+.category-description button + button {
+  margin-top: .5rem;
+}
+
+/* =============================================================================
+    CARD
+   =========================================================================== */
+.card.library .button {
+    background-color: var(--library-color);
+}
+.card.field .button {
+    background-color: var(--field-color);
+}
+.card.lab .button {
+    background-color: var(--lab-color);
+}
+.card.showroom .button {
+    background-color: var(--showroom-color);
+}
+.card.workshop .button {
+    background-color: var(--workshop-color);
+}
+.card.stepping-stones .button {
+    background-color: var(--stepping-stones-color);
+}
+.card .button {
+    color: white;
+}
+
+.card {
+  background: white;
+  width: 275px;
+  filter: drop-shadow(2px 2px 4px #ccc);
+  border-radius: 1rem;
+  padding: 1.3rem 1rem;
+}
+
+.card:hover {
+  filter: drop-shadow(2px 2px 4px #aaa);
+  background: #fdfdfd;
+}
+.card header {
+  display: flex;
+  align-items: flex-start;
+}
+.card .logo {
+  width: 32px;
+  height: 32px;
+  margin: 0 1rem 0 0;
+}
+.card h1 {
+    margin: 0;
+    line-height: 1em;
+  /* z-index: 2; */
+  /* width: 230px; */
+}
+.card a {
+  color: black;
+  text-decoration: none;
+}
+
+
+
+/* =============================================================================
+    ARTICLE
+   =========================================================================== */
+article .library aside {
+    border-color: var(--library-color);
+}
+article {
+    max-width: 40rem;
+    margin: 10rem auto;
+}
+article header {
+    margin-bottom: 2rem;
+}
+article h2 {
+    clear: both;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+}
+article h3 {
+    font-size: 1rem;
+    /* margin: 1.5rem 0 0.5rem 0; */
+}
+address {
+    font-size: .8rem;
+    display: inline;
+    font-style: italic;
+}
+article p {
+    line-height: 1.5rem;
+}
+article section {
+    display: flex;
+    gap: 1em;
+    justify-content: space-between;
+    align-items: baseline;
+}
+article aside {
+    border: 2px solid;
+    border-radius: 1rem;
+    min-width: 150px;
+    padding: 0.7rem;
+    width: 25%;
+}
+article .logo {
+    min-width: 60px;
 }
