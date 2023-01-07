@@ -10,21 +10,21 @@
 
     <main id="home" data-filter="*" data-sort-value="id">
         <div class="grid">
-            <section class="category-description home stamp">
-                <header>
+            <section class="home stamp">
+                <div>
                     <img id="home" src="/img/icon-home.svg" width="32" alt="home">
                     <h1>CMD Methods Pack</h1>
-                </header>
-                <footer>
                     <p>This pack supports your design research planning in any CMD project. Browse through the cards to
                         find
                         methods that suit your needs. Pick a combination of methods belonging to different research
                         strategies to balance your research plan. You can use this card set in many ways. It is really
                         up to
                         you!</p>
+                </div>
+                <footer>
+                    <button id="sort-alphatical">Sort alphabetical</button>
+                    <button id="sort-strategy">Sort by research strategy</button>
                 </footer>
-                <button id="sort-alphatical">Sort alphabetical</button>
-                <button id="sort-strategy">Sort by research strategy</button>
             </section>
 
 
@@ -32,14 +32,13 @@
             <% if (card.type=="category-description") { %>
             <section class="category-description stamp <%= card.strategy %>">
                 <div>
-                    <header>
-                        <img class="logo" src="/img/logo-<%= card.strategy%>.png" alt="logo <%= card.strategy%>">
-                        <h1><%= card.name %></h1>
-                    </header>
-                    <footer>
+                    <img class="logo" src="/img/logo-<%= card.strategy%>.png" alt="logo <%= card.strategy%>">
+                    <h1><%= card.name %></h1>
+                    <h3>Goal</h3>
+                    <div>
                         <p><em><%- card.motto %></em></p>
                         <p><%- card.why %></p>
-                    </footer>
+                    </div>
                 </div>
                 <img src="/img/<%= card.strategy%>.png" alt="research strategy <%= card.strategy%>">
             </section>
