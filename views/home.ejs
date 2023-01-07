@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('includes/head'); %>
+</head>
+
+<body>
+    <%- include('includes/header'); %>
+
+    <main id="home" data-filter="*" data-sort-value="id">
+        <div class="grid">
+            <section class="category-description home stamp">
+                <header>
+                    <div class="category-icon home"></div>
+                    <h1>CMD Methods Pack</h1>
+                </header>
+                <p>This pack supports your design research planning in any CMD project. Browse through the cards to find
+                    methods that suit your needs. Pick a combination of methods belonging to different research
+                    strategies to balance your research plan. You can use this card set in many ways. It is really up to
+                    you!</p><button id="sort-alphatical">Sort alphabetical</button><button id="sort-strategy">Sort by
+                    research strategy</button>
+            </section>
+
+
+            <% cardlist.forEach(function(card){ %>
+            <% if (card.type=="category-description") { %>
+            <section class="category-description stamp <%= card.strategy %>">
+                <div>
+                    <header>
+                        <img class="logo" src="/img/logo-<%= card.strategy%>.png" alt="logo <%= card.strategy%>">
+                        <h1><%= card.name %></h1>
+                    </header>
+                    <footer>
+                        <p><em><%- card.motto %></em></p>
+                        <p><%- card.why %></p>
+                    </footer>
+                </div>
+                <img src="/img/<%= card.strategy%>.png" alt="research strategy <%= card.strategy%>">
+            </section>
+            <% } else { %>
+            <section class="card grid-item <%= card.strategy%>" id="benchmark-creation">
+                <a href="/cards/<%= card.strategy%>/benchmark-creation">
+                    <header>
+                        <div class="category-icon"></div>
+                        <h1><%= card.name%></h1>
+                    </header>
+                    <div><img src="<%= card.image %>" alt="Benchmark creation" width="<%= card.widhth %>"
+                            height="<%= card.height %>">
+                        <h2>Why?</h2>
+                        <p><%- card.why %></p>
+                    </div>
+                </a>
+                <a class="button call-to-action" href="/cards/<%= card.strategy%>/<%= card.id%>">More info</a>
+            </section>
+            <% }; %>
+            <% }); %>
+
+        </div>
+    </main>
+
+
+    <%- include('includes/footer'); %>
+</body>
+
+</html>

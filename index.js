@@ -1,5 +1,6 @@
 const express = require('express');
 const config = require('./config/config.json');
+const cardlist = require('./card-contents.json')
 const home  = require('./routes/home');
 const cards = require('./routes/cards');
 const about = require('./routes/about');
@@ -10,12 +11,18 @@ const about = require('./routes/about');
 
 const app = express();
 
+
 /*****************************************************
  * Middleware
  ****************************************************/
 app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+// add cardlist content to request object
+app.use((req,res,next)=> {
+    req.cardlist = cardlist;
+    next();
+})
 
 /*****************************************************
  * Set template engine

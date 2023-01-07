@@ -1,14 +1,8 @@
-.float-right {
-    float: right;
+img {
+    max-width: 100%;
 }
-.float-left {
-    float: left;
-}
-.indent {
+.home {
 
-}
-.logo {
-    width: 50px;
 }
 .library {
 
@@ -24,4 +18,43 @@
 }
 .showroom {
     
+}
+.grid {
+
+}
+.grid-item {
+
+}
+.card {
+
+}
+.category-icon {
+
+}
+.category-description {
+
+}
+.button {
+
+}
+.pin{
+
+}
+.unpin {
+
+}
+.call-to-action {
+
+}
+.logo {
+    width: 50px;
+}
+.float-right {
+    float: right;
+}
+.float-left {
+    float: left;
+}
+.indent {
+
 }

@@ -4,7 +4,8 @@ const config = require('../config/config.json')
 
 
 router.get('/', function (req, res) {
-    res.send('home');
+    console.log(req.cardlist.length)
+    res.render('home', {cardlist: req.cardlist});
 })
 
 
