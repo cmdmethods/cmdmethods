@@ -98,7 +98,7 @@ strong {
 } 
 
 button, .button {
-  font-size: .8rem;
+  /* font-size: .8rem; */
   display: inline-block;
   text-align: center;
   font-family: inherit;
@@ -244,7 +244,7 @@ section.category-description>div{
   margin: -4rem 3rem 0 1rem;
   max-height: 250px;
 }
-.category-description .logo {
+.category-description .logo, .home .logo {
     width: 60px;
     justify-self: end;
 }
@@ -335,37 +335,46 @@ section.home {
 }
 
 .card {
-  background: white;
-  /* width: 275px; */
-  filter: drop-shadow(2px 2px 4px #ccc);
-  border-radius: 1rem;
-  padding: 1.3rem 1rem;
+    background: white;
+    filter: drop-shadow(2px 2px 4px #ccc);
+    border-radius: 1rem;
+    padding: 1.3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-
 .card:hover {
-  filter: drop-shadow(2px 2px 4px #aaa);
-  background: #fdfdfd;
+    filter: drop-shadow(2px 2px 4px #aaa);
+    background: #fdfdfd;
 }
 .card header {
-  display: flex;
-  align-items: flex-start;
+    display: flex;
+    align-items: flex-start;
+    flex: 1;
 }
 .card .logo {
-  width: 32px;
-  height: 32px;
-  margin: 0 1rem 0 0;
+    width: 32px;
+    height: 32px;
+    margin: 0 1rem 0 0;
 }
 .card h1 {
     margin: 0;
     line-height: 1em;
-  /* z-index: 2; */
-  /* width: 230px; */
+}
+.card p {
+    margin-top:0;
 }
 .card a {
-  color: black;
-  text-decoration: none;
+    flex: 0;
+    color: black;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-
+.card a:first-child {
+    flex: 1;
+}
 
 
 /* =============================================================================

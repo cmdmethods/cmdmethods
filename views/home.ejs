@@ -12,7 +12,7 @@
         <div class="grid">
             <section class="home stamp">
                 <div>
-                    <img id="home" src="/img/icon-home.svg" width="32" alt="home">
+                    <img id="home" src="/img/icon-home.svg" alt="home">
                     <h1>CMD Methods Pack</h1>
                     <p>This pack supports your design research planning in any CMD project. Browse through the cards to
                         find
@@ -49,11 +49,10 @@
                         <img class="logo" src="/img/logo-<%= card.strategy%>.png" alt="logo <%= card.strategy%>">
                         <h1><%= card.name%></h1>
                     </header>
-                    <div><img src="<%= card.image %>" alt="Benchmark creation" width="<%= card.widhth %>"
-                            height="<%= card.height %>">
-                        <h2>Why?</h2>
-                        <p><%- card.why %></p>
-                    </div>
+                    <img src="<%= card.image %>" alt="Benchmark creation" width="<%= card.widhth %>"
+                        height="<%= card.height %>">
+                    <h2>Why?</h2>
+                    <p><%- card.why %></p>
                 </a>
                 <a class="button call-to-action" href="/cards/<%= card.strategy%>/<%= card.id%>">More info</a>
             </section>
