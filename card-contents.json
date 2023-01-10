@@ -217,29 +217,6 @@
 
     {
         "type": "card",
-        "status": "archived",
-        "id": "bag-tour",
-        "name": "Bag tour",
-        "strategy": "field",
-        "image": "/img/cards/field-bag-tour.png",
-        "image_width": 275,
-        "image_height": 235,
-        "why": "As a low threshold introduction to the user, which still gives valuable insights, the bag tour asks users to report about themselves based on the content of their bag.",
-        "how": "Ask people to show the content of their bags and let them talk about these objects. The objects reveal a lot of information about someone's personality, interests and values. You can make notes and pictures of the objects for analysis.",
-        "ingredients": [
-            "Users who feel comfortable enough to share the contents of their bags with you.",
-            "Note-taking equipment (and possibly video equipment).",
-            "Conversation skills and a sense of humour."
-        ],
-        "in_practice": "The bag tour is also used in other variants such as key chains, desks or suitcases.",
-        "sliders": {
-            "inspiration_data": 5,
-            "expertise_fit": 95,
-            "overview_certainty": 5
-        }
-    },
-    {
-        "type": "card",
         "status": "active",
         "id": "card-sorting",
         "name": "Card sorting",
@@ -267,33 +244,7 @@
         ]
     },
 
-    {
-        "type": "card",
-        "status": "archived",
-        "id": "context-mapping",
-        "name": "Context mapping",
-        "strategy": "field",
-        "image": "/img/cards/field-context-mapping.png",
-        "image_width": 275,
-        "image_height": 281,
-        "why": "Get an understanding of the context and personal experience of users with a product or service.",
-        "how": "Users actively participate in the design process from the early stages of design together with designers and stakeholders. A number of exercises allow users to relate to the topic through making things, doing things and talking about it.",
-        "ingredients": [
-            "A pre-determined topic and an activity plan.",
-            "Warm up exercises for the users (for example cultural probes) to do at home.",
-            "An open mind and an ability to stimulate users to share and be creative.",
-            "Video recording equipment and note taking materials to support analysis after the session."
-        ],
-        "in_practice": "Context mapping is particularly useful at the start of a very open-ended design project.",
-        "sliders": {
-            "inspiration_data": 25,
-            "expertise_fit": 95,
-            "overview_certainty": 5
-        },
-        "useful_resources": [
-            "Contextmapping is extensively treated in the <cite>Convivial Toolbox</cite> (Sanders & Stappers, 2013) in particular chapter 3 p64-74, and chapters 5-7 p127-207  are important as they present a practical how-to guide and lots of background information."
-        ]
-    },
+
     {
         "type": "card",
         "status": "active",
@@ -322,61 +273,6 @@
             "A thorough how-to guide for probing is found in <cite>Design Probes</cite>, the PhD thesis of Tuuli Mattelmäki. Chapter 3 & 4. P39-100.",
             "The chapter on Diary Studies, in <cite>Observing the User Experience</cite> (Goodman, Kuniavsky, Moed, 2012) gives a lot of background information that is relevant to cultural probes. Chapter 9, p211-241",
             "Likewise the chapter on generative tools & techniques in the <cite>Convivial toolbox</cite> (Sanders & Stappers, 2013). Chapter 3 p64-74 give much background information"
-        ]
-    },
-
-    {
-        "type": "card",
-        "status": "archived",
-        "id": "day-in-the-life",
-        "name": "Day in the life",
-        "strategy": "field",
-        "image": "/img/cards/field-day-in-the-life.png",
-        "image_width": 275,
-        "image_height": 306,
-        "why": "Gain insights in the life of your users. To gain empathy, a day in the life could be a useful technique.",
-        "how": "Follow a user throughout a typical day and map his/her activities and interactions.",
-        "ingredients": [
-            "Several users who are willing to be shadowed for a day.",
-            "Note taking materials.",
-            "Time to do 'the day in the life' and to analyse the notes.",
-            "A way to figure out what a 'typical' day is."
-        ],
-        "in_practice": "A day in the life is particularly valuable in the beginning of an open-ended design project.",
-        "sliders": {
-            "inspiration_data": 25,
-            "expertise_fit": 95,
-            "overview_certainty": 5
-        }
-    },
-
-    {
-        "type": "card",
-        "status": "active",
-        "id": "Observation",
-        "name": "Observation",
-        "strategy": "field",
-        "image": "/img/cards/field-observation.png",
-        "image_width": 275,
-        "image_height": 413,
-        "why": "Get a feeling for how your intended users will use your product by unobtrusively observing them and their behaviour in their daily environment.",
-        "how": "Watch people without talking to or instructing them. While observing, make notes about their activities, interactions and environments. In a 'fly on the wall' observation you try to be as invisible as possible. In a 'participant observation' you blend in and take part in the activities of those who you are observing.",
-        "ingredients": [
-            "Speak the language of the participants and learn the habits of the group.",
-            "Respectful and meaningful relationships with the users.",
-            "A good eye and a notebook.",
-            "A willingness to stick to the facts and delay interpretation. "
-        ],
-        "in_practice": "In a project for schoolchildren designers decided to sit in the classroom, take part in the games during breaks and have lunch together, in order to get to know their world and activities.",
-        "sliders": {
-            "inspiration_data": 50,
-            "expertise_fit": 95,
-            "overview_certainty": 5
-        },
-        "useful_resources": [
-            "<cite>Universal methods of design</cite> (Martin & Hannington , 2012) spend a couple of pages about observation (in general) and fly on the wall specifically. In the Dutch version: chapter 57, p172-173  and chapter 42, p90,91",
-            "<cite>Universal methods of design</cite> (Martin & Hannington , 2012) spends a couple of pages about participant observation.  In the Dutch version: chapter 59, p124-125",
-            "<cite>Observing the User Experience</cite> (Goodman, Kuniavsky, Moed, 2012) also has a chapter on observation and field visits. Chapter 9, p211-241 "
         ]
     },
 
@@ -436,6 +332,36 @@
             "<cite>Universal methods of design</cite> (Martin & Hannington , 2012) spend a couple of pages about interviews In the dutch version: chapter 48, p102-103",
             "A compact and comprehensive book about interview techniques (in Dutch) is <cite>Basisboek Interviewen</cite> (Baarda & van Hulst, 2012)",
             "<cite>Observing the User Experience</cite> (Goodman, Kuniavsky, Moed, 2012) has a comprehensive chapter on interviewing. Chapter 6. P129-141"
+        ]
+    },
+
+    {
+        "type": "card",
+        "status": "active",
+        "id": "Observation",
+        "name": "Observation",
+        "strategy": "field",
+        "image": "/img/cards/field-observation.png",
+        "image_width": 275,
+        "image_height": 413,
+        "why": "Get a feeling for how your intended users will use your product by unobtrusively observing them and their behaviour in their daily environment.",
+        "how": "Watch people without talking to or instructing them. While observing, make notes about their activities, interactions and environments. In a 'fly on the wall' observation you try to be as invisible as possible. In a 'participant observation' you blend in and take part in the activities of those who you are observing.",
+        "ingredients": [
+            "Speak the language of the participants and learn the habits of the group.",
+            "Respectful and meaningful relationships with the users.",
+            "A good eye and a notebook.",
+            "A willingness to stick to the facts and delay interpretation. "
+        ],
+        "in_practice": "In a project for schoolchildren designers decided to sit in the classroom, take part in the games during breaks and have lunch together, in order to get to know their world and activities.",
+        "sliders": {
+            "inspiration_data": 50,
+            "expertise_fit": 95,
+            "overview_certainty": 5
+        },
+        "useful_resources": [
+            "<cite>Universal methods of design</cite> (Martin & Hannington , 2012) spend a couple of pages about observation (in general) and fly on the wall specifically. In the Dutch version: chapter 57, p172-173  and chapter 42, p90,91",
+            "<cite>Universal methods of design</cite> (Martin & Hannington , 2012) spends a couple of pages about participant observation.  In the Dutch version: chapter 59, p124-125",
+            "<cite>Observing the User Experience</cite> (Goodman, Kuniavsky, Moed, 2012) also has a chapter on observation and field visits. Chapter 9, p211-241 "
         ]
     },
 
@@ -1446,24 +1372,6 @@
 
     {
         "type": "card",
-        "status": "archived",
-        "id": "risk-analysis",
-        "name": "Risk Analysis",
-        "strategy": "stepping-stones",
-        "image": "/img/cards/step-risk-analysis.png",
-        "image_width": 275,
-        "image_height": 218,
-        "why": "Determine which risks are acceptable by making an inventory of the possible threats in a project and determining the probability and impact of each threat. Possibly also determine the effect in, for example, terms of costs. ",
-        "how": "Analyse the project together with a group of experienced people to identify possible threats. Check if safety regulations, laws, or standards are applicable in the context of the project. Beside threats you can also determine opportunities, for example when using a SWOT analysis (Strengths, Weaknesses, Opportunities, Threats).",
-        "ingredients": [
-            "The ability to be extremely pessimistic.",
-            "A group of experienced people to help you.",
-            "A willingness and ability to see project-specific threats."
-        ],
-        "in_practice": "When the investments get bigger, a risk analysis becomes common practice. "
-    },
-    {
-        "type": "card",
         "status": "active",
         "id": "scenario",
         "name": "Scenario",
@@ -1499,7 +1407,100 @@
             "A sense of task 'hierarchy'."
         ],
         "in_practice": "Projects that deliver task specific software, such as in the military or (factory) control rooms, cannot do without task analysis."
-    }
+    },
+        {
+        "type": "card",
+        "status": "archived",
+        "id": "bag-tour",
+        "name": "Bag tour",
+        "strategy": "field",
+        "image": "/img/cards/field-bag-tour.png",
+        "image_width": 275,
+        "image_height": 235,
+        "why": "As a low threshold introduction to the user, which still gives valuable insights, the bag tour asks users to report about themselves based on the content of their bag.",
+        "how": "Ask people to show the content of their bags and let them talk about these objects. The objects reveal a lot of information about someone's personality, interests and values. You can make notes and pictures of the objects for analysis.",
+        "ingredients": [
+            "Users who feel comfortable enough to share the contents of their bags with you.",
+            "Note-taking equipment (and possibly video equipment).",
+            "Conversation skills and a sense of humour."
+        ],
+        "in_practice": "The bag tour is also used in other variants such as key chains, desks or suitcases.",
+        "sliders": {
+            "inspiration_data": 5,
+            "expertise_fit": 95,
+            "overview_certainty": 5
+        }
+    },
+    {
+        "type": "card",
+        "status": "archived",
+        "id": "context-mapping",
+        "name": "Context mapping",
+        "strategy": "field",
+        "image": "/img/cards/field-context-mapping.png",
+        "image_width": 275,
+        "image_height": 281,
+        "why": "Get an understanding of the context and personal experience of users with a product or service.",
+        "how": "Users actively participate in the design process from the early stages of design together with designers and stakeholders. A number of exercises allow users to relate to the topic through making things, doing things and talking about it.",
+        "ingredients": [
+            "A pre-determined topic and an activity plan.",
+            "Warm up exercises for the users (for example cultural probes) to do at home.",
+            "An open mind and an ability to stimulate users to share and be creative.",
+            "Video recording equipment and note taking materials to support analysis after the session."
+        ],
+        "in_practice": "Context mapping is particularly useful at the start of a very open-ended design project.",
+        "sliders": {
+            "inspiration_data": 25,
+            "expertise_fit": 95,
+            "overview_certainty": 5
+        },
+        "useful_resources": [
+            "Contextmapping is extensively treated in the <cite>Convivial Toolbox</cite> (Sanders & Stappers, 2013) in particular chapter 3 p64-74, and chapters 5-7 p127-207  are important as they present a practical how-to guide and lots of background information."
+        ]
+    },
 
+    {
+        "type": "card",
+        "status": "archived",
+        "id": "day-in-the-life",
+        "name": "Day in the life",
+        "strategy": "field",
+        "image": "/img/cards/field-day-in-the-life.png",
+        "image_width": 275,
+        "image_height": 306,
+        "why": "Gain insights in the life of your users. To gain empathy, a day in the life could be a useful technique.",
+        "how": "Follow a user throughout a typical day and map his/her activities and interactions.",
+        "ingredients": [
+            "Several users who are willing to be shadowed for a day.",
+            "Note taking materials.",
+            "Time to do 'the day in the life' and to analyse the notes.",
+            "A way to figure out what a 'typical' day is."
+        ],
+        "in_practice": "A day in the life is particularly valuable in the beginning of an open-ended design project.",
+        "sliders": {
+            "inspiration_data": 25,
+            "expertise_fit": 95,
+            "overview_certainty": 5
+        }
+    },
+
+    {
+        "type": "card",
+        "status": "archived",
+        "id": "risk-analysis",
+        "name": "Risk Analysis",
+        "strategy": "stepping-stones",
+        "image": "/img/cards/step-risk-analysis.png",
+        "image_width": 275,
+        "image_height": 270,
+        "why": "Determine which risks are acceptable by making an inventory of the possible threats in a project and determining the probability and impact of each threat. Possibly also determine the effect in, for example, terms of costs. ",
+        "how": "Analyse the project together with a group of experienced people to identify possible threats. Check if safety regulations, laws, or standards are applicable in the context of the project. Beside threats you can also determine opportunities, for example when using a SWOT analysis (Strengths, Weaknesses, Opportunities, Threats).",
+        "ingredients": [
+            "The ability to be extremely pessimistic.",
+            "A group of experienced people to help you.",
+            "A willingness and ability to see project-specific threats."
+        ],
+        "in_practice": "When the investments get bigger, a risk analysis becomes common practice. "
+    }
 
 ]
