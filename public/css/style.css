@@ -109,6 +109,12 @@ button, .button {
   background-color: var(--neutral-color);
   color: white;
 }
+.button:hover {
+    text-decoration: none;
+}
+.button:visited {
+    color: white;
+}
 
 .hidden {
   display: none;

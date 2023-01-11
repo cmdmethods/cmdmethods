@@ -1,5 +1,6 @@
 [{
         "type": "category-description",
+        "status": "active",
         "id": "library",
         "name": "Library",
         "strategy": "library",
@@ -398,6 +399,7 @@
 
     {
         "type": "category-description",
+        "status": "active",
         "id": "lab",
         "name": "Lab",
         "strategy": "lab",
@@ -639,6 +641,7 @@
 
     {
         "type": "category-description",
+        "status": "active",
         "id": "showroom",
         "name": "Showroom",
         "strategy": "showroom",
@@ -911,6 +914,7 @@
 
     {
         "type": "category-description",
+        "status": "active",
         "id": "workshop",
         "name": "Workshop",
         "strategy": "workshop",
@@ -1165,6 +1169,7 @@
 
     {
         "type": "category-description",
+        "status": "active",
         "id": "stepping-stones",
         "name": "Stepping Stones",
         "strategy": "stepping-stones",
