@@ -58,11 +58,11 @@ main {
     padding: 1rem;
 }
 h1 {
-    font-family: "Open Sans Condensed", sans-serif;
+    font-family: 'Open Sans Condensed', sans-serif;
     font-weight: 300;
 }
 h2, h3, h4, h5, h6 {
-    font-family: "Open Sans Condensed", sans-serif;
+    font-family: 'Open Sans Condensed', sans-serif;
     font-weight: 700;
 }
 h2 {
@@ -141,6 +141,7 @@ body>header {
 body>header h1 {
   color: black;
   line-height: 1em;
+  font-weight: 600;
   text-transform: uppercase;
   margin: 0 1rem 0 0;
 }
@@ -191,10 +192,15 @@ body>nav {
   max-width: 1450px;
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   gap: 1rem;
 }
 
+@media (max-width: 1450px) {
+  .grid {
+    max-width: 1200px;
+  }
+}
 
 /* =============================================================================
     CATEGORY DESCRIPTION
@@ -225,7 +231,10 @@ section.category-description {
   border-radius: 1rem;
   padding: 1rem;
   grid-column: 1 / -1;
-  margin-top: 4rem;
+  margin-top: 3rem;
+}
+section.home + section.category-description {
+    margin-top: inherit;
 }
 section.category-description>div{
     display: grid;
