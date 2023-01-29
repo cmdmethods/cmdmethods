@@ -27,11 +27,11 @@ router.get('/', function (req, res) {
     let sortedlist = [...req.cardlist].filter(el => el.status == "active");
     if (!req.query.sort  || req.query.sort == "strategy") {
         sortedlist = sortedlist.sort(sortByStrategy);
-        res.render('home', {cardlist: sortedlist});
+        res.render('home', {strategy: 'home', cardlist: sortedlist});
     } else {
         sortedlist = sortedlist.sort(sortById);
         sortedlist = sortedlist.filter(el => el.type == "card")
-        res.render('home', {cardlist: sortedlist});
+        res.render('home', {strategy: 'home', cardlist: sortedlist});
     }
 })
 router.get('/')
