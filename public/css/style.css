@@ -566,7 +566,7 @@ article .logo {
 /* =============================================================================
     FOOTER
    =========================================================================== */
-footer {
+body>footer {
     background-color: var(--neutral-bg-color);
     display: flex;
     justify-content: space-between;
