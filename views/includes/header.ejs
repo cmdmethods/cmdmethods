@@ -15,25 +15,31 @@
            <li><a class="stepping-stones <% if(strategy=='stepping-stones') { %> <%= 'active' %> <% } %>" href="/cards/stepping-stones"><img src="/img/logo-stepping-stones.png" alt="icon stepping stones"><span>Stepping</span><span>Stones</span></a></li>
        </ul>
 
-        <div>
+        <div id="filter-and-search">
             <button id="filter-options-menu" aria-expanded="false">
                 <svg width="32" height="29" viewBox="0 0 32 29" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12.4445 24.4711V15.4044L2.24894 5.05776C2.09982 4.90998 1.98142 4.73415 1.90057 4.5404C1.81971 4.34665 1.778 4.13882 1.77783 3.92888V2.44443C1.77783 2.20868 1.87148 1.98259 2.03818 1.81589C2.20488 1.64919 2.43097 1.55554 2.66672 1.55554H29.3334C29.5691 1.55554 29.7952 1.64919 29.9619 1.81589C30.1286 1.98259 30.2223 2.20868 30.2223 2.44443V3.95554C30.2247 4.16982 30.1842 4.38242 30.1033 4.58086C30.0224 4.77929 29.9027 4.95957 29.7512 5.1111L19.5556 15.3333V27.3333" stroke="white" stroke-opacity="1" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M12.4445 24.4711V15.4044L2.24894 5.05776C2.09982 4.90998 1.98142 4.73415 1.90057 4.5404C1.81971 4.34665 1.778 4.13882 1.77783 3.92888V2.44443C1.77783 2.20868 1.87148 1.98259 2.03818 1.81589C2.20488 1.64919 2.43097 1.55554 2.66672 1.55554H29.3334C29.5691 1.55554 29.7952 1.64919 29.9619 1.81589C30.1286 1.98259 30.2223 2.20868 30.2223 2.44443V3.95554C30.2247 4.16982 30.1842 4.38242 30.1033 4.58086C30.0224 4.77929 29.9027 4.95957 29.7512 5.1111L19.5556 15.3333V27.3333" stroke="white" stroke-opacity="1" stroke-width="2" stroke-linecap="round"/>
                 </svg>
                 <span class="visually-hidden">filter</span>
             </button>
             <form action="/cards/" method="GET">
                 <label class="visually-hidden" for="search">Search:</label>
                 <input type="search" id="search" name="search" placeholder="Search ...">
-                <button id="start-search" type="submit" aria-expanded="false">
+                    <button id="start-search" type="submit" aria-expanded="false">
                     <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M23 23.406L18.0418 18.3429M20.7895 11.5763C20.7895 14.1162 19.7997 16.5519 18.0378 18.3479C16.276 20.1438 13.8864 21.1527 11.3947 21.1527C8.9031 21.1527 6.51351 20.1438 4.75165 18.3479C2.9898 16.5519 2 14.1162 2 11.5763C2 9.03654 2.9898 6.60076 4.75165 4.80485C6.51351 3.00893 8.9031 2 11.3947 2C13.8864 2 16.276 3.00893 18.0378 4.80485C19.7997 6.60076 20.7895 9.03654 20.7895 11.5763Z" stroke="white" stroke-opacity="1" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M23 23.406L18.0418 18.3429M20.7895 11.5763C20.7895 14.1162 19.7997 16.5519 18.0378 18.3479C16.276 20.1438 13.8864 21.1527 11.3947 21.1527C8.9031 21.1527 6.51351 20.1438 4.75165 18.3479C2.9898 16.5519 2 14.1162 2 11.5763C2 9.03654 2.9898 6.60076 4.75165 4.80485C6.51351 3.00893 8.9031 2 11.3947 2C13.8864 2 16.276 3.00893 18.0378 4.80485C19.7997 6.60076 20.7895 9.03654 20.7895 11.5763Z" stroke="white" stroke-opacity="1" stroke-width="2" stroke-linecap="round"/>
                     </svg>
                     <span class="visually-hidden">search</span>
                 </button>
             </form>
         </div>
-    
-
    </nav>
+   <button id="menu-categories" aria-expanded="false">
+        <svg width="27" height="24" viewBox="0 0 32 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 27H30M2 14.5H30M2 2H30" stroke="#F8F8F8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="visually-hidden">menu categories</span>
+   </button>
+
+
    

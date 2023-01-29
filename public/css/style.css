@@ -171,7 +171,6 @@ body>header {
   align-items: flex-end;
   z-index: 2;
 }
-
 body>header h1 {
   color: black;
   line-height: 1em;
@@ -179,15 +178,12 @@ body>header h1 {
   text-transform: uppercase;
   margin: 0 1rem 0 0;
 }
-
 body>header a {
   text-decoration: none;
 }
-
 body>header>a:hover {
     text-decoration: none;
 }
-
 body>header h2 {
   font-size: 1rem;
   font-weight: 300;
@@ -200,7 +196,7 @@ body>header h2 {
     position: static;
   }
   body>header h2 {
-    display: none;
+    /* display: none; */
   }
 }
 
@@ -209,8 +205,8 @@ body>header h2 {
    =========================================================================== */
 
 body>nav {
-    max-width: 1450px;
-    margin: 90px auto 0;
+    max-width: min(1200px, calc(100% - 1.5rem));
+    margin: 90px auto 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -244,7 +240,7 @@ nav div {
     gap: 1rem;
 }
 nav form {
-    /* position: absolute; */
+    position: relative;
 }
 #filter-options-menu {
     width: 50px;
@@ -255,19 +251,63 @@ nav form {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    margin-left: -46px;
+    position: absolute;
+    right: .4rem;
+    top: .3rem;
+}
+#menu-categories {
+    display: none;
+
 }
 
 @media (max-width: 1450px) {
   body>nav {
-    max-width: 1200px;
+    max-width: min(1200px, calc(100% - 1.5rem));
   }
+}
+@media (max-width: 800px) {
+    body>nav {
+        margin-top: 106px;
+    }
+    #menu-categories {
+        display:inline-block;
+        position: fixed;
+        z-index: 10000;
+        bottom: 1rem;
+        right: .5rem;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        box-shadow: -3px -3px 10px rgb(0 0 0 / 0.4);
+    }
+    nav ul {
+        position: fixed;
+        right: .5rem;
+        bottom: 90px;
+        z-index: 10000;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--neutral-bg-color);
+        padding: .7rem;
+        border-radius: 40px;
+        box-shadow: -3px -3px 10px rgb(0 0 0 / 0.2);
+        display: none;
+    }
+    nav div, nav form {
+        flex: 1;
+    }
+    nav input {
+        width: 100%;
+    }
 }
 @media (max-width: 480px) {
   body>nav {
-    margin-top: auto;
+    margin-top: 2rem;
   }
 }
+
+
+
 
 /* =============================================================================
     CARD GRID
