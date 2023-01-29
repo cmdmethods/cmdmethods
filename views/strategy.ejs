@@ -8,29 +8,12 @@
 <body>
     <%- include('includes/header'); %>
 
-    <main id="home">
+    <main>
         <div class="grid">
-            <section class="home">
-                <div>
-                    <img class="logo" src="/img/icon-home.svg" alt="home">
-                    <h1>CMD Methods Pack</h1>
-                    <p>This pack supports your design research planning in any CMD project. Browse through the cards to
-                        find
-                        methods that suit your needs. Pick a combination of methods belonging to different research
-                        strategies to balance your research plan. You can use this card set in many ways. It is really
-                        up to
-                        you!</p>
-                </div>
-                <footer>
-                    <a class="button" href="/?sort=strategy">Sort by research strategy</a>
-                    <a class="button" href="/?sort=alphabetical">Sort alphabetical</a>
-                </footer>
-            </section>
-
 
             <% cardlist.forEach(function(card){ %>
             <% if (card.type=="category-description") { %>
-            <section class="category-description <%= card.strategy %>">
+            <section class="category-description stamp <%= card.strategy %>">
                 <div>
                     <img class="logo" src="/img/logo-<%= card.strategy%>.png" alt="logo <%= card.strategy%>">
                     <h1><%= card.name %></h1>
