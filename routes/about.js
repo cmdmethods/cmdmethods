@@ -4,10 +4,10 @@ const config = require('../config/config.json')
 
 
 router.get('/', function (req, res) {
-    res.render('about');
+    res.render('about', {strategy: ''});
 });
 router.get('/more-info', function (req,res){
-    res.render('moreInfo');
+    res.render('moreInfo',  {strategy: ''});
 });
 
 
