@@ -339,7 +339,7 @@
     {
         "type": "card",
         "status": "active",
-        "id": "Observation",
+        "id": "observation",
         "name": "Observation",
         "strategy": "field",
         "image": "/img/cards/field-observation.png",
