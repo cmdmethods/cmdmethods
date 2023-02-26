@@ -19,10 +19,10 @@ app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 // add cardlist content to request object
-app.use((req,res,next)=> {
-    req.cardlist = cardlist;
-    next();
-})
+// app.use((req,res,next)=> {
+    // req.cardlist = cardlist;
+    // next();
+// })
 
 /*****************************************************
  * Set template engine
