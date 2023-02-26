@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('includes/head'); %>
+</head>
+
+<body>
+    <%- include('includes/header'); %>
+
+    <main class="card-detail">
+
+        <section class="card details <%= card.strategy%>" id="<%= card.id%>">
+            <header>
+                <img class="logo" src="/img/logo-<%= card.strategy%>.png" alt="logo <%= card.strategy%>">
+                <h1><%= card.name%></h1>
+            </header>
+            <img src="<%= card.image %>" alt="<%= card.name%>" width="<%= card.width %>"
+                height="<%= card.height %>">
+            <h2>Why?</h2>
+            <p><%- card.why %></p>
+            <h2>How?</h2>
+            <p><%- card.how %></p>
+            <h2>Ingredi&euml;nts</h2>
+            <ul>
+                <% card.ingredients.forEach(ingredient => { %>
+                    <li><%= ingredient %></li>
+                <% }) %>
+            </ul>
+            <h2>In practice</h2>
+            <p><%- card.in_practice %></p>
+            <% if (card.video) { %>
+                <p><%= card.video.description %></p>
+                <iframe width="620" height="350" src="<%= card.video.url %>" frameborder="0" allowfullscreen></iframe>
+            <% } %>
+            <% if (card.useful_resources) { %>
+                <ul>
+                    <% card.useful_resources.forEach( resource => { %>
+                        <li><%- resource %></li>
+                    <% }) %>
+                </ul>
+            <% } %>
+            <% if (card.sliders) { %>
+                <div class="sliders">
+                    <div>
+                        <label>inspiration</label>
+                        <input type="range" disabled value="<%= card.sliders.inspiration_data %>">
+                        <label>data</label>
+                    </div>
+                    <div>
+                        <label>expertise</label>
+                        <input type="range" disabled value="<%= card.sliders.expertise_fit %>">
+                        <label>fit</label>
+                    </div>
+                    <div>
+                        <label>overview</label>
+                        <input type="range" disabled value="<%= card.sliders.overview_certainty %>">
+                        <label>certainty</label>
+                    </div>
+                 </div>
+            <% } %>
+
+
+        </section>
+
+    </main>
+
+
+    <%- include('includes/footer'); %>
+</body>
+
+</html>

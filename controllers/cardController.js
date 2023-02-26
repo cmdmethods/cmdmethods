@@ -24,6 +24,11 @@ exports.getCardsByStrategy = (req, res, next) => {
     }
 };
 
-exports.getCardById = (req, res) => {
-    console.log('jkdfls')
+exports.getCardById = (req, res, next) => {
+    const card = Card.findById( req.params.id);
+    if (card) {
+        res.render('carddetails', {strategy: req.params.strategy, card});
+    } else {
+        next();
+    }
 }
