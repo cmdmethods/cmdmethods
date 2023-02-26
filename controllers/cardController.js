@@ -8,7 +8,7 @@ exports.getCards = (req, res, next) => {
     } else {
         cards = Card.findAllSortedById();
     }
-    if (cards) {
+    if (cards.length > 0) {
         res.render('home', {strategy: 'home', cardlist: cards});
     } else {
         next();
@@ -17,5 +17,13 @@ exports.getCards = (req, res, next) => {
 
 exports.getCardsByStrategy = (req, res, next) => {
     const cards = Card.findByStrategy(req.params.strategy);
-    res.render('strategy', {strategy: req.params.strategy, cardlist: cards});
+    if (cards.length > 0) {
+        res.render('strategy', {strategy: req.params.strategy, cardlist: cards});
+    } else {
+        next();
+    }
 };
+
+exports.getCardById = (req, res) => {
+    console.log('jkdfls')
+}

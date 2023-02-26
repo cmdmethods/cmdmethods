@@ -373,7 +373,7 @@ nav form {
     ul#categories {
         position: fixed;
         right: .5rem;
-        bottom: 90px;
+        bottom: -650px;
         z-index: 10000;
         flex-direction: column;
         align-items: center;
@@ -385,7 +385,7 @@ nav form {
     }
 
     ul#categories.fly-in {
-        bottom: -650px;
+        bottom: 90px;
     }
 
     nav div,
@@ -413,7 +413,7 @@ nav form {
     max-width: 1450px;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1rem;
 }
 
@@ -658,7 +658,7 @@ article .library aside {
 
 article {
     max-width: 40rem;
-    margin: 10rem auto;
+    margin: 4rem auto;
 }
 
 article header {

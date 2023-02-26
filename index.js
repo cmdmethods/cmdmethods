@@ -42,7 +42,7 @@ app.use('/about', about);
  ****************************************************/
 
 app.use(function (req, res) {
-    res.status(404).render('404');
+    res.status(404).render('404', {strategy:''});
 });
 
 
