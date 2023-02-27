@@ -26,8 +26,10 @@ exports.getCardsByStrategy = (req, res, next) => {
 
 exports.getCardById = (req, res, next) => {
     const card = Card.findById( req.params.id);
+    const previousCard = Card.findPrevious( req.params.id);
+    const nextCard = Card.findNext( req.params.id);
     if (card) {
-        res.render('carddetails', {strategy: req.params.strategy, card});
+        res.render('carddetails', {strategy: req.params.strategy, card, previousCard, nextCard});
     } else {
         next();
     }

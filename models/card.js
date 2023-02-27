@@ -46,6 +46,27 @@ exports.findById = (id) => {
     return cardlist.find( el => el.id === id)
 };
 
+exports.findPrevious = (id) => {
+    const cards = [...cardlist].filter( el => (el.status == "active" && el.type == "card"));
+    cards.sortbyStrategyTypeId;
+    const index = cards.findIndex( el => el.id == id);
+    console.log(index)
+    if (index > 0) {
+        return cards[index-1];
+    } 
+    return cards[cards.length-1];
+}
+
+exports.findNext = (id) => {
+    const cards = [...cardlist].filter( el => (el.status == "active" && el.type == "card"));
+    cards.sortbyStrategyTypeId;
+    const index = cards.findIndex( el => el.id == id);
+    if ((index >= 0) && (index < (cards.length-1))) {
+        return cards[index+1];
+    } 
+    return cards[0];
+}
+
 exports.findAll = () => {
     const activeCards = [...cardlist].filter( el => el.status == "active");
     return activeCards.sort(sortbyStrategyTypeId);

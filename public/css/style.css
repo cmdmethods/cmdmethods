@@ -746,6 +746,47 @@ input[type="range"]::-ms-thumb {
 
 
 /* =============================================================================
+    PREV NEXT ARROWS
+   =========================================================================== */
+
+.previous, .next {
+  position: fixed;
+  top: 50%;
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  border-radius: 50%;
+  background: white;
+    box-shadow: 3px 3px 7px rgb(0 0 0 / 0.2);
+  cursor: pointer;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.previous {
+  left: .7rem;
+}
+
+.next {
+  right: .7rem;
+}
+
+.previous svg, .next svg {
+  position: absolute;
+  left: 20%;
+  top: 20%;
+  width: 60%;
+  height: 60%;
+}
+
+.previous:hover, .next:hover {
+  background: hsla(206, 40%, 72%, 1);
+}
+
+
+
+/* =============================================================================
     ARTICLE
    =========================================================================== */
 article .library aside {
