@@ -8,46 +8,54 @@
 <body>
     <%- include('includes/header'); %>
 
-    <main>
-        <div class="grid">
+        <main>
+            <div class="grid">
 
-            <% cardlist.forEach(function(card){ %>
-            <% if (card.type=="category-description") { %>
-            <section class="category-description stamp <%= card.strategy %>">
-                <div>
-                    <img class="logo" src="/img/logo-<%= card.strategy%>.png" alt="logo <%= card.strategy%>">
-                    <h1><%= card.name %></h1>
-                    <h3>Goal</h3>
-                    <div>
-                        <p><em><%- card.motto %></em></p>
-                        <p><%- card.why %></p>
-                    </div>
-                </div>
-                <img src="/img/<%= card.strategy%>.png" alt="research strategy <%= card.strategy%>">
-            </section>
-            <% } else { %>
-            <section class="card grid-item <%= card.strategy%>" id="<%= card.id%>">
-                <a href="/cards/<%= card.strategy%>/<%= card.id%>">
-                    <header>
-                        <img class="logo" src="/img/logo-<%= card.strategy%>.png" alt="logo <%= card.strategy%>">
-                        <h1><%= card.name%></h1>
-                    </header>
-                    <img src="<%= card.image %>" alt="<%= card.name%>" width="<%= card.width %>"
-                        height="<%= card.height %>">
-                    <h2>Why?</h2>
-                    <p><%- card.why %></p>
-                </a>
-                <a class="button call-to-action" href="/cards/<%= card.strategy%>/<%= card.id%>">More info</a>
-            </section>
+                <% cardlist.forEach(function(card){ %>
+                    <% if (card.type=="category-description" ) { %>
+                        <section class="category-description <%= card.strategy %>">
+                            <div>
+                                <img class="logo" src="/img/logo-<%= card.strategy%>.png"
+                                    alt="logo <%= card.strategy%>">
+                                <h1>
+                                    <%= card.name %>
+                                </h1>
+                                <h3>Goal</h3>
+                                <div>
+                                    <p><em><%- card.motto %></em></p>
+                                    <p><%- card.why %></p>
+                                </div>
+                            </div>
+                            <img class="category-img" src="/img/<%= card.strategy%>.png"
+                                alt="research strategy <%= card.strategy%>">
+                        </section>
+                        <% } else { %>
+                            <section class="card grid-item <%= card.strategy%>" id="<%= card.id%>">
+                                <a href="/cards/<%= card.strategy%>/<%= card.id%>">
+                                    <header>
+                                        <img class="logo" src="/img/logo-<%= card.strategy%>.png"
+                                            alt="logo <%= card.strategy%>">
+                                        <h1>
+                                            <%= card.name%>
+                                        </h1>
+                                    </header>
+                                    <img src="<%= card.image %>" alt="<%= card.name%>" width="<%= card.width %>"
+                                        height="<%= card.height %>">
+                                    <h2>Why?</h2>
+                                    <p><%- card.why %></p>
+                                </a>
+                                <a class="button call-to-action" href="/cards/<%= card.strategy%>/<%= card.id%>">More
+                                    info</a>
+                            </section>
 
-            <% }; %>
-            <% }); %>
+                            <% }; %>
+                                <% }); %>
 
-        </div>
-    </main>
+            </div>
+        </main>
 
 
-    <%- include('includes/footer'); %>
+        <%- include('includes/footer'); %>
 </body>
 
 </html>

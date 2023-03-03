@@ -8,62 +8,66 @@
 <body>
     <%- include('includes/header'); %>
 
-    <main id="home">
-        <div class="grid">
-            <section class="home">
-                <div>
-                    <img class="logo" src="/img/icon-home.svg" alt="home">
-                    <h1>CMD Methods Pack</h1>
-                    <p>This pack supports your design research planning in any CMD project. Browse through the cards to
-                        find
-                        methods that suit your needs. Pick a combination of methods belonging to different research
-                        strategies to balance your research plan. You can use this card set in many ways. It is really
-                        up to
-                        you!</p>
-                </div>
-                <footer>
-                    <a class="button" href="/?sort=strategy">Sort by research strategy</a>
-                    <a class="button" href="/?sort=alphabetical">Sort alphabetical</a>
-                </footer>
-            </section>
-
-
-            <% cardlist.forEach(function(card){ %>
-            <% if (card.type=="category-description") { %>
-            <section class="category-description <%= card.strategy %>">
-                <div>
-                    <img class="logo" src="/img/logo-<%= card.strategy%>.png" alt="logo <%= card.strategy%>">
-                    <h1><%= card.name %></h1>
-                    <h3>Goal</h3>
+        <main id="home">
+            <div class="grid">
+                <section class="home category-description">
                     <div>
-                        <p><em><%- card.motto %></em></p>
-                        <p><%- card.why %></p>
+                        <img class="logo" src="/img/icon-home.svg" alt="home">
+                        <h1>CMD Methods Pack</h1>
+                        <p>This pack supports your design research planning in any CMD project. Browse through the cards
+                            to find methods that suit your needs. Pick a combination of methods belonging to different
+                            research strategies to balance your research plan. You can use this card set in many ways.
+                            It is really up to you!</p>
                     </div>
-                </div>
-                <img src="/img/<%= card.strategy%>.png" alt="research strategy <%= card.strategy%>">
-            </section>
-            <% } else { %>
-            <section class="card grid-item <%= card.strategy%>" id="<%= card.id%>">
-                <a href="/cards/<%= card.strategy%>/<%= card.id%>">
-                    <header>
-                        <img class="logo" src="/img/logo-<%= card.strategy%>.png" alt="logo <%= card.strategy%>">
-                        <h1><%= card.name%></h1>
-                    </header>
-                    <img src="<%= card.image %>" alt="<%= card.name%>" width="<%= card.width %>"
-                        height="<%= card.height %>">
-                    <h2>Why?</h2>
-                    <p><%- card.why %></p>
-                </a>
-                <a class="button call-to-action" href="/cards/<%= card.strategy%>/<%= card.id%>">More info</a>
-            </section>
-            <% }; %>
-            <% }); %>
-
-        </div>
-    </main>
+                    <footer>
+                        <a class="button" href="/?sort=strategy">Sort by research strategy</a>
+                        <a class="button" href="/?sort=alphabetical">Sort alphabetical</a>
+                    </footer>
+                </section>
 
 
-    <%- include('includes/footer'); %>
+                <% cardlist.forEach(function(card){ %>
+                    <% if (card.type=="category-description" ) { %>
+                        <section class="category-description <%= card.strategy %>">
+                            <div>
+                                <img class="logo" src="/img/logo-<%= card.strategy%>.png"
+                                    alt="logo <%= card.strategy%>">
+                                <h1>
+                                    <%= card.name %>
+                                </h1>
+                                <h3>Goal</h3>
+                                <em><%- card.motto %></em>
+                                <p><%- card.why %></p>
+                            </div>
+                            <img class="category-img" src="/img/<%= card.strategy%>.png"
+                                alt="research strategy <%= card.strategy%>">
+                        </section>
+                        <% } else { %>
+                            <section class="card grid-item <%= card.strategy%>" id="<%= card.id%>">
+                                <a href="/cards/<%= card.strategy%>/<%= card.id%>">
+                                    <header>
+                                        <img class="logo" src="/img/logo-<%= card.strategy%>.png"
+                                            alt="logo <%= card.strategy%>">
+                                        <h1>
+                                            <%= card.name%>
+                                        </h1>
+                                    </header>
+                                    <img src="<%= card.image %>" alt="<%= card.name%>" width="<%= card.width %>"
+                                        height="<%= card.height %>">
+                                    <h2>Why?</h2>
+                                    <p><%- card.why %></p>
+                                </a>
+                                <a class="button call-to-action" href="/cards/<%= card.strategy%>/<%= card.id%>">More
+                                    info</a>
+                            </section>
+                            <% }; %>
+                                <% }); %>
+
+            </div>
+        </main>
+
+
+        <%- include('includes/footer'); %>
 </body>
 
 </html>
