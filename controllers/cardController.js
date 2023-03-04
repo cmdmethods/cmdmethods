@@ -1,4 +1,5 @@
 const Card = require('../models/card');
+const arrify = require('array-back');
 
 
 exports.getCards = (req, res, next) => {
@@ -33,4 +34,14 @@ exports.getCardById = (req, res, next) => {
     } else {
         next();
     }
+}
+
+exports.filterCards = (req, res) => {
+    let cards;
+    if (!req.query.dimension && !req.query.strategy) {
+        cards = Card.findAllSortedById();
+    } else {
+        cards = Card.findByFilters(arrify(req.query.dimension) , arrify(req.query.strategy));
+    }
+    res.render('filter-results', {strategy: '', cardlist: cards});
 }

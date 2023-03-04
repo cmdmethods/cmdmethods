@@ -1,6 +1,7 @@
 const cardlist = require('../card-contents.json');
 const config = require('../config/config.json');
 
+
 function sortById (a,b) {
     if (a.id > b.id) { return 1 }
     if (a.id < b.id) { return -1 }
@@ -42,6 +43,33 @@ function sortByTypeId (a,b) {
     return 0;
 }
 
+function filterByDimension (cards, dimension) {
+    return cards.filter( card => {
+        if (card.sliders) {
+            if (dimension == "inspiration") {
+                    if (card.sliders.inspiration_data < 50) { return 1 }
+            }
+            if (dimension == "data") {
+                    if (card.sliders.inspiration_data > 50) { return 1 }
+            }
+            if (dimension == "expertise") {
+                    if (card.sliders.expertise_fit < 50) { return 1 }
+            }
+            if (dimension == "fit") {
+                    if (card.sliders.expertise_fit > 50) { return 1 }
+            }
+            if (dimension == "overview") {
+                    if (card.sliders.overview_certainty < 50) { return 1 }
+            }
+            if (dimension == "certainty") {
+                    if (card.sliders.overview_certainty > 50) { return 1 }
+            }
+        }
+       return 0;
+    })
+
+}
+
 exports.findById = (id) => {
     return cardlist.find( el => el.id === id)
 };
@@ -67,8 +95,8 @@ exports.findNext = (id) => {
 }
 
 exports.findAll = () => {
-    const activeCards = [...cardlist].filter( el => el.status == "active");
-    return activeCards.sort(sortbyStrategyTypeId);
+    const cards = [...cardlist].filter( el => el.status == "active");
+    return cards.sort(sortbyStrategyTypeId);
 };
 
 exports.findAllSortedById = () => {
@@ -85,5 +113,22 @@ exports.findArchived = () => {
     const activeCards = [...cardlist].filter( el => el.status == "archived");
     return activeCards.sort(sortById);
 };
+
+exports.findByFilters = (filterDimensions, filterStrategies) => {
+    const cards = [...cardlist].filter( el => el.status == "active");
+    let totalCards = [];
+    filterDimensions.forEach( dimension => {
+        const filteredCards = filterByDimension(cards, dimension);
+        totalCards = [...totalCards, ...filteredCards];
+    })
+    filterStrategies.forEach( strategy => {
+        const filteredCards =  [...cardlist].filter( el => (
+            el.status == "active" && el.strategy == strategy && el.type=="card"
+        ));
+        totalCards = [...totalCards, ...filteredCards];
+    })
+    const unique = [...new Map(totalCards.map((m) => [m.id, m])).values()];
+    return unique.sort(sortById);
+}
 
 
