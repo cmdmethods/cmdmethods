@@ -1,45 +1,146 @@
-   <header>
-       <a href="/">
-           <h1>CMD METHODS PACK</h1>
-       </a>
-       <h2>Find a combination of research methods that suit your needs - <a href="/about/more-info">more info</a></h2>
-   </header>
-   <nav>
-       <ul id="categories">
-           <li><a class="home <% if(strategy=='home') { %> <%= 'active' %> <% } %>" href="/"><img src="/img/icon-home.svg" alt="icon home">Home</a></li>
-           <li><a class="library <% if(strategy=='library') { %> <%= 'active' %> <% } %>" href="/cards/library"><img src="/img/logo-library.png" alt="icon library">Library</a></li>
-           <li><a class="field <% if(strategy=='field') { %> <%= 'active' %> <% } %>" href="/cards/field"><img src="/img/logo-field.png" alt="icon field">Field</a></li>
-           <li><a class="lab <% if(strategy=='lab') { %> <%= 'active' %> <% } %>" href="/cards/lab"><img src="/img/logo-lab.png" alt="icon lab">Lab</a></li>
-           <li><a class="showroom <% if(strategy=='showroom') { %> <%= 'active' %> <% } %>" href="/cards/showroom"><img src="/img/logo-showroom.png" alt="icon showroom">Showroom</a></li>
-           <li><a class="workshop <% if(strategy=='workshop') { %> <%= 'active' %> <% } %>" href="/cards/workshop"><img src="/img/logo-workshop.png" alt="icon workshop">Workshop</a></li>
-           <li><a class="stepping-stones <% if(strategy=='stepping-stones') { %> <%= 'active' %> <% } %>" href="/cards/stepping-stones"><img src="/img/logo-stepping-stones.png" alt="icon stepping stones"><span>Stepping</span><span>Stones</span></a></li>
-       </ul>
+<header>
+    <a href="/">
+        <h1>CMD METHODS PACK</h1>
+    </a>
+    <h2>Find a combination of research methods that suit your needs - <a href="/about/more-info">more info</a></h2>
+</header>
+<nav>
+    <ul id="categories">
+        <li><a class="home <% if(strategy=='home') { %> <%= 'active' %> <% } %>" href="/"><img src="/img/icon-home.svg"
+                    alt="icon home">Home</a></li>
+        <li><a class="library <% if(strategy=='library') { %> <%= 'active' %> <% } %>" href="/cards/library"><img
+                    src="/img/logo-library.png" alt="icon library">Library</a></li>
+        <li><a class="field <% if(strategy=='field') { %> <%= 'active' %> <% } %>" href="/cards/field"><img
+                    src="/img/logo-field.png" alt="icon field">Field</a></li>
+        <li><a class="lab <% if(strategy=='lab') { %> <%= 'active' %> <% } %>" href="/cards/lab"><img
+                    src="/img/logo-lab.png" alt="icon lab">Lab</a></li>
+        <li><a class="showroom <% if(strategy=='showroom') { %> <%= 'active' %> <% } %>" href="/cards/showroom"><img
+                    src="/img/logo-showroom.png" alt="icon showroom">Showroom</a></li>
+        <li><a class="workshop <% if(strategy=='workshop') { %> <%= 'active' %> <% } %>" href="/cards/workshop"><img
+                    src="/img/logo-workshop.png" alt="icon workshop">Workshop</a></li>
+        <li><a class="stepping-stones <% if(strategy=='stepping-stones') { %> <%= 'active' %> <% } %>"
+                href="/cards/stepping-stones"><img src="/img/logo-stepping-stones.png"
+                    alt="icon stepping stones"><span>Stepping</span><span>Stones</span></a></li>
+    </ul>
 
-        <div id="filter-and-search">
-            <form action="/cards/" method="GET">
-                <label class="visually-hidden" for="search">Search:</label>
-                <input type="search" id="search" name="search" placeholder="Search ...">
-                    <button id="start-search" type="submit" aria-expanded="false">
-                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M23 23.406L18.0418 18.3429M20.7895 11.5763C20.7895 14.1162 19.7997 16.5519 18.0378 18.3479C16.276 20.1438 13.8864 21.1527 11.3947 21.1527C8.9031 21.1527 6.51351 20.1438 4.75165 18.3479C2.9898 16.5519 2 14.1162 2 11.5763C2 9.03654 2.9898 6.60076 4.75165 4.80485C6.51351 3.00893 8.9031 2 11.3947 2C13.8864 2 16.276 3.00893 18.0378 4.80485C19.7997 6.60076 20.7895 9.03654 20.7895 11.5763Z" stroke="white" stroke-opacity="1" stroke-width="3" stroke-linecap="round"/>
-                    </svg>
-                    <span class="visually-hidden">search</span>
-                </button>
-            </form>
-            <button id="filter-options-menu" aria-expanded="false">
-                <svg width="32" height="29" viewBox="0 0 32 29" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12.4445 24.4711V15.4044L2.24894 5.05776C2.09982 4.90998 1.98142 4.73415 1.90057 4.5404C1.81971 4.34665 1.778 4.13882 1.77783 3.92888V2.44443C1.77783 2.20868 1.87148 1.98259 2.03818 1.81589C2.20488 1.64919 2.43097 1.55554 2.66672 1.55554H29.3334C29.5691 1.55554 29.7952 1.64919 29.9619 1.81589C30.1286 1.98259 30.2223 2.20868 30.2223 2.44443V3.95554C30.2247 4.16982 30.1842 4.38242 30.1033 4.58086C30.0224 4.77929 29.9027 4.95957 29.7512 5.1111L19.5556 15.3333V27.3333" stroke="white" stroke-opacity="1" stroke-width="3" stroke-linecap="round"/>
+    <div id="filter-and-search">
+        <form action="/cards/" method="GET">
+            <label class="visually-hidden" for="search">Search:</label>
+            <input type="search" id="search" name="search" placeholder="Search ...">
+            <button id="start-search" type="submit" aria-expanded="false">
+                <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M23 23.406L18.0418 18.3429M20.7895 11.5763C20.7895 14.1162 19.7997 16.5519 18.0378 18.3479C16.276 20.1438 13.8864 21.1527 11.3947 21.1527C8.9031 21.1527 6.51351 20.1438 4.75165 18.3479C2.9898 16.5519 2 14.1162 2 11.5763C2 9.03654 2.9898 6.60076 4.75165 4.80485C6.51351 3.00893 8.9031 2 11.3947 2C13.8864 2 16.276 3.00893 18.0378 4.80485C19.7997 6.60076 20.7895 9.03654 20.7895 11.5763Z"
+                        stroke="white" stroke-opacity="1" stroke-width="3" stroke-linecap="round" />
                 </svg>
-                <span class="visually-hidden">filter</span>
+                <span class="visually-hidden">search</span>
             </button>
-        </div>
-   </nav>
-   <button id="menu-categories" aria-expanded="false">
-        <svg width="32" height="29" viewBox="0 0 32 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 27H30M2 14.5H30M2 2H30" stroke="#F8F8F8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </form>
+        <button id="filter-options-menu" aria-expanded="false">
+            <svg width="32" height="29" viewBox="0 0 32 29" fill="none" aria-hidden="true" focusable="false"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M12.4445 24.4711V15.4044L2.24894 5.05776C2.09982 4.90998 1.98142 4.73415 1.90057 4.5404C1.81971 4.34665 1.778 4.13882 1.77783 3.92888V2.44443C1.77783 2.20868 1.87148 1.98259 2.03818 1.81589C2.20488 1.64919 2.43097 1.55554 2.66672 1.55554H29.3334C29.5691 1.55554 29.7952 1.64919 29.9619 1.81589C30.1286 1.98259 30.2223 2.20868 30.2223 2.44443V3.95554C30.2247 4.16982 30.1842 4.38242 30.1033 4.58086C30.0224 4.77929 29.9027 4.95957 29.7512 5.1111L19.5556 15.3333V27.3333"
+                    stroke="white" stroke-opacity="1" stroke-width="3" stroke-linecap="round" />
+            </svg>
+            <span class="visually-hidden">filter</span>
+        </button>
+    </div>
+</nav>
+
+<button id="menu-categories" aria-expanded="false">
+    <svg width="32" height="29" viewBox="0 0 32 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 27H30M2 14.5H30M2 2H30" stroke="#F8F8F8" stroke-width="3" stroke-linecap="round"
+            stroke-linejoin="round" />
+    </svg>
+    <span class="visually-hidden">menu categories</span>
+</button>
+
+<section id="filter-options">
+    <button id="close-filter-options" aria-expanded="false">
+        <svg width="34" height="33" viewBox="0 0 34 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32 31.4464L2 2.1123M32 2.1123L2 31.4464" stroke="#474747" stroke-width="3"
+                stroke-linecap="round" />
         </svg>
-        <span class="visually-hidden">menu categories</span>
-   </button>
+        <span class="visually-hidden">Close filter options</span>
+    </button>
+    <h1>What is your goal?</h1>
+    <em>Select one or more</em>
+    <form action="/cards" method="GET">
 
+        <fieldset id="filter-dimensions">
+            <label for="filter-inspiration">
+                <input type="checkbox" name="inspiration" id="filter-inspiration" value="inspiration">
+                <strong>I want to be inspired (11)</strong>
+                <p>In need of some inspiration? Acquire rich insights that will further your design.</p>
+            </label>
+            <label for="filter-data">
+                <input type="checkbox" name="data" id="filter-data" value="data">
+                <strong>I want to collect data</strong>
+                Want to increase your designs credibility? Collect some data!
+            </label>
+            <label for="filter-expertise">
+                <input type="checkbox" name="expertise" id="filter-expertise" value="expertise">
+                <strong>I want expertise</strong>
+                Want to build on existing expertise and knowledge? Look no further.
+            </label>
+            <label for="filter-fit">
+                <input type="checkbox" name="fit" id="filter-fit" value="fit">
+                <strong>I want fit advice</strong>
+                Losing touch with your applications context? Research if your design is relevant and fit for use.
+            </label>
+            <label for="filter-overview">
+                <input type="checkbox" name="overview" id="filter-overview" value="overview">
+                <strong>I want to get an overview</strong>
+                Looking for a complete picture of the situation, without getting into to many specifics? This one is for
+                you!
+            </label>
+            <label for="filter-certainty">
+                <input type="checkbox" name="certainty" id="filter-certainty" value="certainty">
+                <strong>I want to get certainty</strong>
+                Want to be certain that something works and identify cause and effect? Let’s get more specific!
+            </label>
+            <label for="filter-stepping-stones" class="fullwidth">
+                <input type="checkbox" name="stepping-stones" id="filter-stepping-stones" value="stepping-stones">
+                <strong>I want tangible representations</strong>
+                Want to condense your insights into tangible representations that can help to communicate findings to
+                the team and client.
+            </label>
+        </fieldset>
+        <fieldset id="filter-strategies">
+            <legend>Filter research strategies:</legend>
+            <label for="filter-library">
+                <input type="checkbox" name="library" id="filter-library">
+                <img src="/img/logo-library.png" alt="library icon">
+                <p>Library ()</p>
+            </label>
+            <label for="filter-field">
+                <input type="checkbox" name="field" id="filter-field">
+                <img src="/img/logo-field.png" alt="field icon">
+                <p>Field (13)</p>
+            </label>
+            <label for="filter-lab">
+                <input type="checkbox" name="lab" id="filter-lab">
+                <img src="/img/logo-lab.png" alt="lab icon">
+                <p>Lab (13)</p>
+            </label>
+            <label for="filter-showroom">
+                <input type="checkbox" name="showroom" id="filter-showroom">
+                <img src="/img/logo-showroom.png" alt="showroom icon">
+                <p>Showroom (13)</p>
+            </label>
+            <label for="filter-workshop">
+                <input type="checkbox" name="workshop" id="filter-workshop">
+                <img src="/img/logo-workshop.png" alt="workshop icon">
+                <p>Workshop (13)</p>
+            </label>
+            <label for="filter-stepping-stones">
+                <input type="checkbox" name="stepping-stones" id="filter-stepping-stones">
+                <img src="/img/logo-stepping-stones.png" alt="stepping-stones icon">
+                <p>Stepping Stones (13)</p>
+            </label>
+        </fieldset>
+        <input type="submit" value="show methods (52)">
 
-   
+    </form>
+</section>

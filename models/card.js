@@ -50,7 +50,6 @@ exports.findPrevious = (id) => {
     const cards = [...cardlist].filter( el => (el.status == "active" && el.type == "card"));
     cards.sortbyStrategyTypeId;
     const index = cards.findIndex( el => el.id == id);
-    console.log(index)
     if (index > 0) {
         return cards[index-1];
     } 
