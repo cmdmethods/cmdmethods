@@ -4,6 +4,7 @@ const cardlist = require('./card-contents.json')
 const home  = require('./routes/home');
 const cards = require('./routes/cards');
 const about = require('./routes/about');
+const api = require('./routes/api');
 
 /*****************************************************
  * Define some constants and variables
@@ -18,11 +19,6 @@ const app = express();
 app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-// add cardlist content to request object
-// app.use((req,res,next)=> {
-    // req.cardlist = cardlist;
-    // next();
-// })
 
 /*****************************************************
  * Set template engine
@@ -35,6 +31,7 @@ app.set('view engine', 'ejs');
 app.use('/', home);
 app.use('/cards', cards);
 app.use('/about', about);
+app.use('/api', api);
 
 
 /*****************************************************

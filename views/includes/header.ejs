@@ -4,6 +4,8 @@
     </a>
     <h2>Find a combination of research methods that suit your needs - <a href="/about/more-info">more info</a></h2>
 </header>
+
+
 <nav>
     <ul id="categories">
         <li><a class="home <% if(strategy=='home') { %> <%= 'active' %> <% } %>" href="/"><img src="/img/icon-home.svg"
@@ -64,83 +66,120 @@
         </svg>
         <span class="visually-hidden">Close filter options</span>
     </button>
+
+
     <h1>What is your goal?</h1>
     <em>Select one or more</em>
-    <form action="/cards" method="GET">
 
+
+    <form action="/cards" method="GET">
         <fieldset id="filter-dimensions">
             <label for="filter-inspiration">
                 <input type="checkbox" name="dimension" id="filter-inspiration" value="inspiration">
-                <strong>I want to be inspired (11)</strong>
+                <strong>I want to be inspired
+                    <span class="filterNumber" data-filter="inspiration"></span>
+                </strong>
                 <p>In need of some inspiration? Acquire rich insights that will further your design.</p>
             </label>
             <label for="filter-data">
                 <input type="checkbox" name="dimension" id="filter-data" value="data">
-                <strong>I want to collect data</strong>
-                Want to increase your designs credibility? Collect some data!
+                <strong>I want to collect data
+                    <span class="filterNumber" data-filter="data"></span>
+                </strong>
+                <p>Want to increase your designs credibility? Collect some data!</p>
             </label>
             <label for="filter-expertise">
                 <input type="checkbox" name="dimension" id="filter-expertise" value="expertise">
-                <strong>I want expertise</strong>
-                Want to build on existing expertise and knowledge? Look no further.
+                <strong>I want expertise
+                    <span class="filterNumber" data-filter="expertise"></span>
+                </strong>
+                <p>Want to build on existing expertise and knowledge? Look no further.</p>
             </label>
             <label for="filter-fit">
                 <input type="checkbox" name="dimension" id="filter-fit" value="fit">
-                <strong>I want fit advice</strong>
-                Losing touch with your applications context? Research if your design is relevant and fit for use.
+                <strong>I want fit advice
+                    <span class="filterNumber" data-filter="fit"></span>
+                </strong>
+                <p>Losing touch with your applications context? Research if your design is relevant and fit for use.</p>
             </label>
             <label for="filter-overview">
                 <input type="checkbox" name="dimension" id="filter-overview" value="overview">
-                <strong>I want to get an overview</strong>
-                Looking for a complete picture of the situation, without getting into to many specifics? This one is for
-                you!
+                <strong>I want to get an overview
+                    <span class="filterNumber" data-filter="overview"></span>
+                </strong>
+                <p>
+                    Looking for a complete picture of the situation, without getting into to many specifics? This one is
+                    for you!
+                </p>
             </label>
             <label for="filter-certainty">
                 <input type="checkbox" name="dimension" id="filter-certainty" value="certainty">
-                <strong>I want to get certainty</strong>
-                Want to be certain that something works and identify cause and effect? Let’s get more specific!
+                <strong>I want to get certainty
+                    <span class="filterNumber" data-filter="certainty"></span>
+                </strong>
+                <p>Want to be certain that something works and identify cause and effect? Let’s get more specific!</p>
             </label>
-            <label for="filter-stepping-stones1" class="fullwidth">
+            <!-- <label for="filter-stepping-stones1" class="fullwidth">
                 <input type="checkbox" name="strategy" id="filter-stepping-stones1" value="stepping-stones">
-                <strong>I want tangible representations</strong>
-                Want to condense your insights into tangible representations that can help to communicate findings to
-                the team and client.
-            </label>
+                <strong>I want tangible representations
+                    <span class="filterNumber" data-filter="stepping-stones"></span>
+                </strong>
+                <p>
+                    Want to condense your insights into tangible representations that can help to communicate findings
+                    to the team and client.
+                </p>
+            </label> -->
         </fieldset>
+
+
         <fieldset id="filter-strategies">
             <legend>Filter research strategies:</legend>
             <label for="filter-library">
                 <input type="checkbox" name="strategy" id="filter-library" value="library">
                 <img src="/img/logo-library.png" alt="library icon">
-                <p>Library ()</p>
+                <p>Library
+                    <span class="filterNumber" data-filter="library"></span>
+                </p>
             </label>
             <label for="filter-field">
                 <input type="checkbox" name="strategy" id="filter-field" value="field">
                 <img src="/img/logo-field.png" alt="field icon">
-                <p>Field (13)</p>
+                <p>Field
+                    <span class="filterNumber" data-filter="field"></span>
+                </p>
             </label>
             <label for="filter-lab">
                 <input type="checkbox" name="strategy" id="filter-lab" value="lab">
                 <img src="/img/logo-lab.png" alt="lab icon">
-                <p>Lab (13)</p>
+                <p>Lab
+                    <span class="filterNumber" data-filter="lab"></span>
+                </p>
             </label>
             <label for="filter-showroom">
                 <input type="checkbox" name="strategy" id="filter-showroom" value="showroom">
                 <img src="/img/logo-showroom.png" alt="showroom icon">
-                <p>Showroom (13)</p>
+                <p>Showroom
+                    <span class="filterNumber" data-filter="showroom"></span>
+                </p>
             </label>
             <label for="filter-workshop">
                 <input type="checkbox" name="strategy" id="filter-workshop" value="workshop">
                 <img src="/img/logo-workshop.png" alt="workshop icon">
-                <p>Workshop (13)</p>
+                <p>Workshop
+                    <span class="filterNumber" data-filter="workshop"></span>
+                </p>
             </label>
             <label for="filter-stepping-stones2">
                 <input type="checkbox" name="strategy" id="filter-stepping-stones2" value="stepping-stones">
                 <img src="/img/logo-stepping-stones.png" alt="stepping-stones icon">
-                <p>Stepping Stones (13)</p>
+                <p>Stepping Stones
+                    <span class="filterNumber" data-filter="stepping-stones"></span>
+                </p>
             </label>
         </fieldset>
-        <input type="submit" value="show methods (52)">
+
+
+        <input type="submit" value="show methods">
 
     </form>
 </section>

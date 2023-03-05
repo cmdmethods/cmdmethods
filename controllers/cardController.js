@@ -1,5 +1,7 @@
 const Card = require('../models/card');
 const arrify = require('array-back');
+const config = require('../config/config.json');
+
 
 
 exports.getCards = (req, res, next) => {
@@ -38,10 +40,21 @@ exports.getCardById = (req, res, next) => {
 
 exports.filterCards = (req, res) => {
     let cards;
-    if (!req.query.dimension && !req.query.strategy) {
-        cards = Card.findAllSortedById();
-    } else {
-        cards = Card.findByFilters(arrify(req.query.dimension) , arrify(req.query.strategy));
-    }
+    cards = Card.findByFilters(arrify(req.query.dimension) , arrify(req.query.strategy));
     res.render('filter-results', {strategy: '', cardlist: cards});
+}
+
+exports.getFilterNumbers = (req, res) => {
+    let filterNumbers = {};
+    const allCards = Card.findAllCards();
+    config.categories.forEach( strategy => {
+        filterNumbers[strategy] = allCards.filter( el => (el.strategy == strategy)).length;
+    })
+    const filterCards = Card.findByFilters(arrify(req.query.dimension) , arrify(req.query.strategy));
+    config.dimensions.forEach( dimension => {
+        filterNumbers[dimension] = Card.filterByDimension(filterCards, dimension).length;
+    })
+    filterNumbers['total'] = filterCards.length;
+    console.log(filterNumbers);
+    res.json(filterNumbers);
 }

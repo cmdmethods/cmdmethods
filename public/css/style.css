@@ -471,6 +471,9 @@ input[type="search"] {
 #filter-dimensions label:has(> input:checked) {
     background-color: var(--neutral-color);
 }
+#filter-dimensions label:has(> input:disabled) {
+    color: gray;
+}
 #filter-dimensions input[type=checkbox] {
     grid-row: 1 / last-line;
 }

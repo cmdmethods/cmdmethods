@@ -1,6 +1,7 @@
 {
   "port": 3000,
   "categories": ["library", "field", "lab", "showroom", "workshop", "stepping-stones"],
+  "dimensions": ["inspiration", "data", "expertise", "fit", "overview", "certainty"],
   "home": {
     "strategy": "home",
     "name": "CMD Methods Pack",
