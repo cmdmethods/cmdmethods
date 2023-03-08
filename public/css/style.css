@@ -82,7 +82,7 @@ body {
     font-family: "Open Sans", sans-serif;
     font-weight: 300;
     background: var(--main-bg-color);
-    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 main {
