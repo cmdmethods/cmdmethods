@@ -43,6 +43,27 @@
                                         height="<%= card.height %>">
                                     <h2>Why?</h2>
                                     <p><%- card.why %></p>
+                                    <% if (card.sliders) { %>
+                                        <div class="sliders">
+                                            <div>
+                                                <label>inspiration</label>
+                                                <input type="range" disabled
+                                                    value="<%= card.sliders.inspiration_data %>">
+                                                <label>data</label>
+                                            </div>
+                                            <div>
+                                                <label>expertise</label>
+                                                <input type="range" disabled value="<%= card.sliders.expertise_fit %>">
+                                                <label>fit</label>
+                                            </div>
+                                            <div>
+                                                <label>overview</label>
+                                                <input type="range" disabled
+                                                    value="<%= card.sliders.overview_certainty %>">
+                                                <label>certainty</label>
+                                            </div>
+                                        </div>
+                                        <% } %>
                                 </a>
                                 <a class="button call-to-action" href="/cards/<%= card.strategy%>/<%= card.id%>">More
                                     info</a>
