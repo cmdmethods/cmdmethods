@@ -110,7 +110,7 @@
         },
         "useful_resources": [
             "There are many good pattern collections, for example published by O'reilly. E.g. Crumlish, Christian, and Erin Malone. <cite>Designing social interfaces: Principles, patterns, and practices for improving the user experience</cite>.  O'Reilly Media, Inc., 2009.",
-            "You also can find many of these online,  for example:  <a href=\"http://www.welie.com/patterns/\">http://www.welie.com/patterns</a>, or <a href=\"http://ui-patterns.com/patterns\">http://ui-patterns.com/patterns</a>, or <a href=\"http://www.mobile-patterns.com/\">http://www.mobile-patterns.com/</a>"
+            "You also can find many of these online,  for example:  <a href=\"http://www.welie.com/patterns/\" target=\"_blank\">http://www.welie.com/patterns</a>, or <a href=\"http://ui-patterns.com/patterns\" target=\"_blank\">http://ui-patterns.com/patterns</a>, or <a href=\"http://www.mobile-patterns.com/\" target=\"_blank\">http://www.mobile-patterns.com/</a>"
         ]
     },
     {
@@ -137,9 +137,7 @@
             "overview_certainty": 25
         },
         "useful_resources": [
-            "<a href=\"http://www.wikihow.com/Interview-Experts\">http://www.wikihow.com/Interview-Experts</a>",
-            "Look at the <a href=\"/cards/interview\">card 'interviews'</a> for general sources about the technique."
-
+            "Look at the card <a href=\"/cards/library/interview\">'interview'</a> for general sources about the technique."
         ]
     },
 
@@ -392,7 +390,8 @@
         "useful_resources": [
             "<cite>Universal methods of design</cite> (Martin & Hannington , 2012) spend a couple of pages about surveys. In the Dutch version: chapter 83, p172-173",
             "A good, comprehensive and compact book dedicated to surveys (in Dutch) is: <cite>Basisboek Enquêteren</cite> (Baarde & de Goede, 2007)",
-            "<cite>Observing the User Experience</cite> (Goodman, Kuniavsky, Moed, 2012) has a chapter on Surveys as well. Chapter 12, p327-376 "
+            "<cite>Observing the User Experience</cite> (Goodman, Kuniavsky, Moed, 2012) has a chapter on Surveys as well. Chapter 12, p327-376 ",
+            "Nielsen Norman Group talks about challenges and limitations of surveys in <a href=\"https://www.nngroup.com/articles/10-survey-challenges/\" target=\"_blank\">this article</a> and gives tips on how to prevent mistakes."
         ]
     },
 
@@ -434,7 +433,8 @@
         },
         "useful_resources": [
             "<cite>Universal Methods of Design</cite> (Hanington & Martin, 2012). Spends a couple of pages about A/B tests. In the Dutch version chapter 1. P8-9",
-            "A good background read for doing an A/B test can be chapter 9 of <cite>Researching Information Systems and Computing</cite> (Oates, 2006) on experimental design p126-140"
+            "A good background read for doing an A/B test can be chapter 9 of <cite>Researching Information Systems and Computing</cite> (Oates, 2006) on experimental design p126-140",
+            "This <a href=\"https://www.nngroup.com/videos/ab-testing-roadmap/\" target=\"_blank\">video</a> by the Nielsen Norman Group explains how to plan a systematic set of A/B tests"
         ]
     },
     {
@@ -727,7 +727,7 @@
             "overview_certainty": 50
         },
         "useful_resources": [
-            "An article expo's as a form of research by Kelly & Wensveen (2014) is described is found in the International Journal of Design: Designing to Bring the Field to the Showroom through Open-ended Provocation. <a href=\"http://purl.tue.nl/572390952290135.pdf\">http://purl.tue.nl/572390952290135.pdf</a>",
+            "An article expo's as a form of research by Kelly & Wensveen (2014) is described is found in the International Journal of Design: Designing to Bring the Field to the Showroom through Open-ended Provocation. <a href=\"http://www.ijdesign.org/index.php/IJDesign/article/view/1439\" target=\"_blank\">http://www.ijdesign.org/index.php/IJDesign/article/view/1439</a>",
             "A bookchapter about using expos as a form of research is found in <cite>Design Research Trough Practice</cite> (Koskinnen, Zimmerman, Binder, Redström, Wensveen, 2011) Chapter 6 p89-100"
         ]
     },
@@ -780,7 +780,7 @@
             "overview_certainty": 95
         },
         "useful_resources": [
-            "A basic websource on heuristic evaluation is found on the webpage of the Norman Nielsen group: <a href=\"https://www.nngroup.com/articles/how-to-conduct-a-heuristic-evaluation/\">https://www.nngroup.com/articles/how-to-conduct-a-heuristic-evaluation/</a>",
+            "A basic websource on heuristic evaluation is found on the webpage of the Norman Nielsen group: <a href=\"https://www.nngroup.com/articles/how-to-conduct-a-heuristic-evaluation/\" target=\"_blank\">https://www.nngroup.com/articles/how-to-conduct-a-heuristic-evaluation/</a>",
             "There is a chapter on Heuristic Evaluation in <cite>Usability Inspection Methods</cite> (Nielsen & Mack, 1994"
         ]
     },
@@ -976,7 +976,7 @@
         },
         "useful_resources": [
             "<cite>Universal Methods of Design</cite> has several chapters on creativity techniques such as chapter 07 (Bodystorming), 08 (Brainstorm Inforgraphics). P20-22 and 56 (Mindmapping), p118-119",
-            "Many books and websites exist about creativity techniques. For example  <a href=\"https://www.mindtools.com/pages/main/newMN_CT.htm\">https://www.mindtools.com/pages/main/newMN_CT.htm</a>",
+            "Many books and websites exist about creativity techniques. For example  <a href=\"https://www.mindtools.com/c7cpzpf/creativity-tools/creativity-tools\" target=\"_blank\">https://www.mindtools.com/c7cpzpf/creativity-tools/creativity-tools</a>",
             "An excellent overview of a wide range of creativity techniques can be found in <cite>ThinkerToys</cite> (Michalko). A book in the Dutch language which is worth reading is: <cite>Creativiteit Hoe Zo?!</cite> (Byttebier)"
         ]
     },
@@ -1059,8 +1059,8 @@
         },
         "useful_resources": [
             "<cite>Universal Methods of Design</cite> has a few pages on prototyping chapter 58 (parallel prototyping) p122 and chapter 66 Prototyping p138 also the chapter 71 on Role-play (p148-149) is relevant for this technique.",
-            "A classic article about prototyping is 'What do Prototypes Prototype' by Charles Houde & Stephany Hill, which can be found in the <cite>Handbook of Human Computer Interaction</cite>. Or online: <a href=\"https://uwdata.github.io/hcid520/readings/Houde-Prototypes.pdf\">https://uwdata.github.io/hcid520/readings/Houde-Prototypes.pdf</a>",
-            "There is a prototyping card set, created by the Hasso Platner Institute <a href=\"http://www.amazon.de/dp/3000506683\">http://www.amazon.de/dp/3000506683</a>",
+            "A classic article about prototyping is 'What do Prototypes Prototype' by Charles Houde & Stephany Hill, which can be found in chapter 16 of the <cite>Handbook of Human Computer Interaction</cite> (p367-381)",
+            "There is a prototyping card set, created by the Hasso Platner Institute <a href=\"http://www.amazon.de/dp/3000506683\" target=\"_blank\">http://www.amazon.de/dp/3000506683</a>",
             "The art of prototyping is well treated in Bill Buxtons <cite>Sketching the User Experience</cite> (2007)"
         ]
     },
@@ -1087,7 +1087,7 @@
             "overview_certainty": 50
         },
         "useful_resources": [
-            "<cite>The Delft Design Guide</cite> spends a couple of pages about SCAMPER (122-123). A more extensive description can be found in <cite>ThinkerToys</cite> (Michalko)  p72-110. There is also a SCAMPER card set by the same author called <cite>ThinkPack</cite> <a href=\"http://www.amazon.com/Thinkpak-Brainstorming-Card-Michael-Michalko/dp/1580087728\">http://www.amazon.com/Thinkpak-Brainstorming-Card-Michael-Michalko/dp/1580087728</a>"
+            "<cite>The Delft Design Guide</cite> spends a couple of pages about SCAMPER (122-123). A more extensive description can be found in <cite>ThinkerToys</cite> (Michalko)  p72-110. There is also a SCAMPER card set by the same author called <cite>ThinkPack</cite> <a href=\"http://www.amazon.com/Thinkpak-Brainstorming-Card-Michael-Michalko/dp/1580087728\" target=\"_blank\">http://www.amazon.com/Thinkpak-Brainstorming-Card-Michael-Michalko/dp/1580087728</a>"
         ]
     },
 
