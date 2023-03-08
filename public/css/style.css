@@ -755,7 +755,7 @@ section.category-description>div {
     margin-top: 0;
 }
 
-.card a {
+.card>a {
     flex: 0;
     color: black;
     text-decoration: none;
@@ -764,7 +764,7 @@ section.category-description>div {
     justify-content: space-between;
 }
 
-.card a:first-child {
+.card>a:first-child {
     flex: 1;
 }
 
