@@ -41,7 +41,7 @@ exports.getCardById = (req, res, next) => {
 exports.filterCards = (req, res) => {
     let cards;
     cards = Card.findByFilters((req.query.search || ''), arrify(req.query.dimension) , arrify(req.query.strategy));
-    res.render('filter-results', {strategy: '', cardlist: cards});
+    res.render('filter-results', {strategy: '', cardlist: cards, query: req.query});
 }
 
 exports.getFilterNumbers = (req, res) => {
