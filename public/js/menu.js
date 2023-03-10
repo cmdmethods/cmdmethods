@@ -23,7 +23,7 @@ window.onload = () => {
         const form = document.querySelector("#filter-options form");
         const formData = new FormData(form);
         const queryString = new URLSearchParams(formData).toString();
-        fetch('https://cmdmethods.onrender.com/api/filter-numbers?' + queryString)
+        fetch('http://cmdmethods.onrender.com/api/filter-numbers?' + queryString)
         .then((response) => response.json())
         .then((filterNumbers) => {
             const list = document.querySelectorAll('.filterNumber');

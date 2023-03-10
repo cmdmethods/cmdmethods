@@ -40,21 +40,19 @@ exports.getCardById = (req, res, next) => {
 
 exports.filterCards = (req, res) => {
     let cards;
-    cards = Card.findByFilters(arrify(req.query.dimension) , arrify(req.query.strategy));
-    res.render('filter-results', {strategy: '', cardlist: cards});
+    cards = Card.findByFilters((req.query.search || ''), arrify(req.query.dimension) , arrify(req.query.strategy));
+    res.render('filter-results', {strategy: '', cardlist: cards, query: req.query});
 }
 
 exports.getFilterNumbers = (req, res) => {
     let filterNumbers = {};
-    const allCards = Card.findAllCards();
+    const filteredCards = Card.findByFilters((req.query.search || ''), arrify(req.query.dimension) , arrify(req.query.strategy));
+    filterNumbers['total'] = filteredCards.length;
     config.categories.forEach( strategy => {
-        filterNumbers[strategy] = allCards.filter( el => (el.strategy == strategy)).length;
+        filterNumbers[strategy] = Card.filterByStrategy(filteredCards, strategy).length;
     })
-    const filterCards = Card.findByFilters(arrify(req.query.dimension) , arrify(req.query.strategy));
     config.dimensions.forEach( dimension => {
-        filterNumbers[dimension] = Card.filterByDimension(filterCards, dimension).length;
+        filterNumbers[dimension] = Card.filterByDimension(filteredCards, dimension).length;
     })
-    filterNumbers['total'] = filterCards.length;
-    console.log(filterNumbers);
     res.json(filterNumbers);
 }
