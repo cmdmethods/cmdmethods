@@ -102,6 +102,21 @@ exports.findArchived = () => {
     return activeCards.sort(sortById);
 };
 
+exports.filterBySearchString = (cards, searchString) => {
+    return [...cards].filter( (el)  => {
+        if (el.name.toLowerCase().includes(searchString.toLowerCase())) {return 1}
+        if (el.why.toLowerCase().includes(searchString.toLowerCase())) {return 1}
+        if (el.how.toLowerCase().includes(searchString.toLowerCase())) {return 1}
+        if (el.in_practice.toLowerCase().includes(searchString.toLowerCase())) {return 1}
+        for (let i=0; i<el.ingredients.length; i++) {
+            if (el.ingredients[i].toLowerCase().includes(searchString.toLowerCase())) { 
+                return 1;
+            }
+        }
+        return 0;
+    });
+};
+
 exports.filterByDimension  = (cards, dimension) => {
     return [...cards].filter( card => {
         if (card.sliders) {
@@ -128,9 +143,14 @@ exports.filterByDimension  = (cards, dimension) => {
     })
 }
 
-exports.findByFilters = (filterDimensions, filterStrategies) => {
+exports.filterByStrategy = (cards, strategy) => {
+    return [...cards].filter( card => card.strategy == strategy );
+}
+
+exports.findByFilters = (searchString, filterDimensions, filterStrategies) => {
     let totalCards = [];
     let filteredByStrategy = [];
+
     if (filterStrategies.length == 0) {
         filteredByStrategy =  this.findAllCards();
     } else {
@@ -140,12 +160,13 @@ exports.findByFilters = (filterDimensions, filterStrategies) => {
         totalCards = [...filteredByStrategy];
     } else {
         filterDimensions.forEach( dimension => {
-            const filteredByDimension = this.filterByDimension(filteredByStrategy, dimension);
-            totalCards = [...totalCards, ...filteredByDimension];
+            totalCards = this.filterByDimension(filteredByStrategy, dimension);
         })
     }
-    const unique = [...new Map(totalCards.map((m) => [m.id, m])).values()];
-    return unique.sort(sortById);
+    if (searchString != '') {
+        totalCards = this.filterBySearchString(totalCards, searchString)
+    }
+    return totalCards.sort(sortById);
 }
 
 
