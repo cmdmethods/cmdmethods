@@ -8,8 +8,9 @@
 :root {
     --main-bg-color: #f1f1f1;
     --main-link-color: #4d86b3;
-    --home-bg-color: #e1e1e1;
+    --home-bg-color: #c5daeb;
     --neutral-color: #96c8ea;
+    --neutral-bright-color: #46a8ea;
     --neutral-bg-color: #c5daeb;
     --library-color: #a8ce3b;
     --library-bg-color: #d8e8ad;
@@ -162,7 +163,7 @@ input[type=submit] {
     width: 100%;
     padding: .5rem;
     border-radius: .8rem;
-    background-color: var(--neutral-color);
+    background-color: var(--neutral-bright-color);
     color: white;
     box-shadow: 3px 3px 7px var(--shadow-light-color);
 }
@@ -337,6 +338,7 @@ input[type="search"] {
 }
 
 #filter-options-menu {
+    background-color: var(--neutral-color);
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -344,6 +346,7 @@ input[type="search"] {
 }
 
 #start-search {
+    background-color: var(--neutral-color);
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -492,7 +495,7 @@ input[type="search"] {
 }
 #filter-options input[type=submit] {
     width: auto;
-    background-color: var(--main-link-color);
+    background-color: var(--neutral-bright-color);
     float: right;
     padding: .5rem 3rem;
     margin-top: 2rem;
