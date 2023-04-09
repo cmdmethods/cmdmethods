@@ -1,14 +1,12 @@
-const express = require('express')
-const router = express.Router()
-const config = require('../config/config.json')
+const express = require('express');
 
+const router = express.Router();
 
-router.get('/', function (req, res) {
-    res.render('about', {strategy: ''});
+router.get('/', (req, res) => {
+    res.render('about', { strategy: '' });
 });
-router.get('/more-info', function (req,res){
-    res.render('moreInfo',  {strategy: ''});
+router.get('/more-info', (req, res) => {
+    res.render('moreInfo', { strategy: '' });
 });
-
 
 module.exports = router;
