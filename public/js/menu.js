@@ -4,10 +4,17 @@ document.getElementById("menu-categories").onclick = () => {
 
 document.getElementById("filter-options-menu").onclick = () => {
     document.getElementById("filter-options").classList.toggle("come-in");
+    document.getElementById("overlay").classList.toggle("hidden");
 };
 
 document.getElementById("close-filter-options").onclick = () => {
     document.getElementById("filter-options").classList.remove("come-in");
+    document.getElementById("overlay").classList.add("hidden");
+};
+
+document.getElementById("overlay").onclick = () => {
+    document.getElementById("filter-options").classList.remove("come-in");
+    document.getElementById("overlay").classList.add("hidden");
 };
 
 const filterCheckboxes = document.querySelectorAll(
@@ -24,7 +31,6 @@ function updateFilterNumbers() {
     const form = document.querySelector("#filter-options form");
     const formData = new FormData(form);
     const queryString = new URLSearchParams(formData).toString();
-
     fetch(`/api/filter-numbers?${queryString}`)
         .then((response) => response.json())
         .then((filterNumbers) => {
