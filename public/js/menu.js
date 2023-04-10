@@ -50,4 +50,17 @@ window.onload = () => {
     }
 
     updateFilterNumbers();
+
+    window.onscroll = function () {
+        const categoryLogos = document.querySelectorAll('.flipable');
+        categoryLogos.forEach((element) => {
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    element.classList.toggle('flip', entries[0].isIntersecting);
+                },
+                { threshold: 1 }
+            );
+            observer.observe(element);
+        });
+    };
 };
