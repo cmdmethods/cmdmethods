@@ -25,7 +25,7 @@ function updateFilterNumbers() {
     const formData = new FormData(form);
     const queryString = new URLSearchParams(formData).toString();
 
-    fetch(`https://cmdmethods.onrender.com/api/filter-numbers?${queryString}`)
+    fetch(`/api/filter-numbers?${queryString}`)
         .then((response) => response.json())
         .then((filterNumbers) => {
             const list = document.querySelectorAll(".filterNumber");
@@ -48,15 +48,20 @@ function updateFilterNumbers() {
 
 updateFilterNumbers();
 
-const categoryLogos = document.querySelectorAll(".flipable");
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            const logo = entry.target.querySelector(".flipable");
+            logo?.classList.toggle("flip", entry.isIntersecting);
+        });
+    },
+    { threshold: 1 }
+);
+
+const categoryLogos = document.querySelectorAll(
+    ".category-description:has(.flipable)"
+);
 
 categoryLogos.forEach((element) => {
-    const observer = new IntersectionObserver(
-        (entries) => {
-            element.classList.toggle("flip", entries[0].isIntersecting);
-        },
-        { threshold: 1 }
-    );
-
     observer.observe(element);
 });
