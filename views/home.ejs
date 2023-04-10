@@ -10,7 +10,7 @@
 
         <main id="home">
             <div class="grid">
-                <section class="home category-description">
+                <section class="home category-description flip-slow">
                     <div>
                         <img class="logo" src="/img/icon-home-bright.svg" alt="home">
                         <h1>CMD Methods Pack</h1>
@@ -30,7 +30,7 @@
                     <% if (card.type=="category-description" ) { %>
                         <section class="category-description <%= card.strategy %>">
                             <div>
-                                <img class="logo" src="/img/logo-<%= card.strategy%>.png"
+                                <img class="logo flipable" src="/img/logo-<%= card.strategy%>.png"
                                     alt="logo <%= card.strategy%>">
                                 <h1>
                                     <%= card.name %>
