@@ -15,7 +15,7 @@
                     <% if (card.type=="category-description" ) { %>
                         <section class="category-description <%= card.strategy %>">
                             <div>
-                                <img class="logo flip flipable" src="/img/logo-<%= card.strategy%>.png"
+                                <img class="icon flip flipable" src="/img/icon-<%= card.strategy%>.svg"
                                     alt="logo <%= card.strategy%>">
                                 <h1>
                                     <%= card.name %>
@@ -33,7 +33,7 @@
                             <section class="card grid-item <%= card.strategy%>" id="<%= card.id%>">
                                 <a href="/cards/<%= card.strategy%>/<%= card.id%>">
                                     <header>
-                                        <img class="logo" src="/img/logo-<%= card.strategy%>.png"
+                                        <img class="icon" src="/img/icon-<%= card.strategy%>.svg"
                                             alt="logo <%= card.strategy%>">
                                         <h1>
                                             <%= card.name%>

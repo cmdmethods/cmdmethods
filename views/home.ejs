@@ -12,7 +12,7 @@
             <div class="grid">
                 <section class="home category-description flip-slow">
                     <div>
-                        <img class="logo" src="/img/icon-home-bright.svg" alt="home">
+                        <img class="icon" src="/img/icon-home.svg" alt="home">
                         <h1>CMD Methods Pack</h1>
                         <p>This pack supports your design research planning in any CMD project. Browse through the cards
                             to find methods that suit your needs. Pick a combination of methods belonging to different
@@ -30,7 +30,7 @@
                     <% if (card.type=="category-description" ) { %>
                         <section class="category-description <%= card.strategy %>">
                             <div>
-                                <img class="logo flipable" src="/img/logo-<%= card.strategy%>.png"
+                                <img class="icon flipable" src="/img/icon-<%= card.strategy%>.svg"
                                     alt="logo <%= card.strategy%>">
                                 <h1>
                                     <%= card.name %>
@@ -46,7 +46,7 @@
                             <section class="card grid-item <%= card.strategy%>" id="<%= card.id%>">
                                 <a href="/cards/<%= card.strategy%>/<%= card.id%>">
                                     <header>
-                                        <img class="logo" src="/img/logo-<%= card.strategy%>.png"
+                                        <img class="icon" src="/img/icon-<%= card.strategy%>.svg"
                                             alt="logo <%= card.strategy%>">
                                         <h1>
                                             <%= card.name%>

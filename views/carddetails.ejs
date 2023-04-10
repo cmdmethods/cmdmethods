@@ -8,77 +8,89 @@
 <body>
     <%- include('includes/header'); %>
 
-    <main class="card-detail">
+        <main class="card-detail">
 
 
-        <section class="card details <%= card.strategy%>" id="<%= card.id%>">
-            <header>
-                <img class="logo" src="/img/logo-<%= card.strategy%>.png" alt="logo <%= card.strategy%>">
-                <h1><%= card.name%></h1>
-            </header>
-            <img src="<%= card.image %>" alt="<%= card.name%>" width="<%= card.width %>"
-                height="<%= card.height %>">
-            <h2>Why?</h2>
-            <p><%- card.why %></p>
-            <h2>How?</h2>
-            <p><%- card.how %></p>
-            <h2>Ingredi&euml;nts</h2>
-            <ul>
-                <% card.ingredients.forEach(ingredient => { %>
-                    <li><%= ingredient %></li>
-                <% }) %>
-            </ul>
-            <h2>In practice</h2>
-            <p><%- card.in_practice %></p>
-            <% if (card.video) { %>
-                <p><%= card.video.description %></p>
-                <iframe width="620" height="350" src="<%= card.video.url %>" frameborder="0" allowfullscreen></iframe>
-            <% } %>
-            <% if (card.useful_resources) { %>
+            <section class="card details <%= card.strategy%>" id="<%= card.id%>">
+                <header>
+                    <img class="icon" src="/img/icon-<%= card.strategy%>.svg" alt="logo <%= card.strategy%>">
+                    <h1>
+                        <%= card.name%>
+                    </h1>
+                </header>
+                <img src="<%= card.image %>" alt="<%= card.name%>" width="<%= card.width %>"
+                    height="<%= card.height %>">
+                <h2>Why?</h2>
+                <p><%- card.why %></p>
+                <h2>How?</h2>
+                <p><%- card.how %></p>
+                <h2>Ingredi&euml;nts</h2>
                 <ul>
-                    <% card.useful_resources.forEach( resource => { %>
-                        <li><%- resource %></li>
-                    <% }) %>
+                    <% card.ingredients.forEach(ingredient=> { %>
+                        <li>
+                            <%= ingredient %>
+                        </li>
+                        <% }) %>
                 </ul>
-            <% } %>
-            <% if (card.sliders) { %>
-                <div class="sliders">
-                    <div>
-                        <label>inspiration</label>
-                        <input type="range" disabled value="<%= card.sliders.inspiration_data %>">
-                        <label>data</label>
-                    </div>
-                    <div>
-                        <label>expertise</label>
-                        <input type="range" disabled value="<%= card.sliders.expertise_fit %>">
-                        <label>fit</label>
-                    </div>
-                    <div>
-                        <label>overview</label>
-                        <input type="range" disabled value="<%= card.sliders.overview_certainty %>">
-                        <label>certainty</label>
-                    </div>
-                 </div>
-            <% } %>
+                <h2>In practice</h2>
+                <p><%- card.in_practice %></p>
+                <% if (card.video) { %>
+                    <p>
+                        <%= card.video.description %>
+                    </p>
+                    <iframe width="620" height="350" src="<%= card.video.url %>" frameborder="0"
+                        allowfullscreen></iframe>
+                    <% } %>
+                        <% if (card.useful_resources) { %>
+                            <ul>
+                                <% card.useful_resources.forEach( resource=> { %>
+                                    <li><%- resource %></li>
+                                    <% }) %>
+                            </ul>
+                            <% } %>
+                                <% if (card.sliders) { %>
+                                    <div class="sliders">
+                                        <div>
+                                            <label>inspiration</label>
+                                            <input type="range" disabled value="<%= card.sliders.inspiration_data %>">
+                                            <label>data</label>
+                                        </div>
+                                        <div>
+                                            <label>expertise</label>
+                                            <input type="range" disabled value="<%= card.sliders.expertise_fit %>">
+                                            <label>fit</label>
+                                        </div>
+                                        <div>
+                                            <label>overview</label>
+                                            <input type="range" disabled value="<%= card.sliders.overview_certainty %>">
+                                            <label>certainty</label>
+                                        </div>
+                                    </div>
+                                    <% } %>
 
 
-        </section>
+            </section>
 
-        <div class="previous">
-            <a href="/cards/<%=previousCard.strategy%>/<%=previousCard.id%>">
-                <svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path></svg>
-            </a>
-        </div>
+            <div class="previous">
+                <a href="/cards/<%=previousCard.strategy%>/<%=previousCard.id%>">
+                    <svg viewBox="0 0 100 100">
+                        <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path>
+                    </svg>
+                </a>
+            </div>
 
-        <div class="next">
-            <a href="/cards/<%=nextCard.strategy%>/<%=nextCard.id%>">
-                <svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path></svg>
-            </a>
-        </div>
-    </main>
+            <div class="next">
+                <a href="/cards/<%=nextCard.strategy%>/<%=nextCard.id%>">
+                    <svg viewBox="0 0 100 100">
+                        <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"
+                            transform="translate(100, 100) rotate(180) "></path>
+                    </svg>
+                </a>
+            </div>
+        </main>
 
 
-    <%- include('includes/footer'); %>
+        <%- include('includes/footer'); %>
 </body>
 
 </html>

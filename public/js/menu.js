@@ -5,12 +5,18 @@ window.onload = () => {
 
     document.getElementById('filter-options-menu').onclick = () => {
         document.getElementById('filter-options').classList.toggle('come-in');
+        document.getElementById('overlay').classList.toggle('hidden');
     };
 
     document.getElementById('close-filter-options').onclick = () => {
         document.getElementById('filter-options').classList.remove('come-in');
+        document.getElementById('overlay').classList.add('hidden');
     };
 
+    document.getElementById('overlay').onclick = () => {
+        document.getElementById('filter-options').classList.remove('come-in');
+        document.getElementById('overlay').classList.add('hidden');
+    };
     const filterCheckboxes = document.querySelectorAll(
         '#filter-options input[type=checkbox]'
     );
@@ -52,8 +58,8 @@ window.onload = () => {
     updateFilterNumbers();
 
     window.onscroll = function () {
-        const categoryLogos = document.querySelectorAll('.flipable');
-        categoryLogos.forEach((element) => {
+        const categoryIcons = document.querySelectorAll('.flipable');
+        categoryIcons.forEach((element) => {
             const observer = new IntersectionObserver(
                 (entries) => {
                     element.classList.toggle('flip', entries[0].isIntersecting);
