@@ -52,8 +52,8 @@ window.onload = () => {
     updateFilterNumbers();
 
     window.onscroll = function () {
-        const categoryLogos = document.querySelectorAll('.flipable');
-        categoryLogos.forEach((element) => {
+        const categoryIcons = document.querySelectorAll('.flipable');
+        categoryIcons.forEach((element) => {
             const observer = new IntersectionObserver(
                 (entries) => {
                     element.classList.toggle('flip', entries[0].isIntersecting);

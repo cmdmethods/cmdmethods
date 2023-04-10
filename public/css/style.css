@@ -279,6 +279,48 @@ body > header h2 {
 /* =============================================================================
     NAV
    =========================================================================== */
+a.home img {
+  background-color: var(--home-bg-color);
+}
+a.home img:hover {
+  background-color: var(--neutral-color);
+}
+a.library img {
+  background-color: var(--library-color);
+}
+a.library img:hover {
+  background-color: var(--library-bright-color);
+}
+a.field img {
+  background-color: var(--field-color);
+}
+a.field img:hover {
+  background-color: var(--field-bright-color);
+}
+a.lab img {
+  background-color: var(--lab-color);
+}
+a.lab img:hover {
+  background-color: var(--lab-bright-color);
+}
+a.showroom img {
+  background-color: var(--showroom-color);
+}
+a.showroom img:hover {
+  background-color: var(--showroom-bright-color);
+}
+a.workshop img {
+  background-color: var(--workshop-color);
+}
+a.workshop img:hover {
+  background-color: var(--workshop-bright-color);
+}
+a.stepping-stones img {
+  background-color: var(--stepping-stones-color);
+}
+a.stepping-stones img:hover {
+  background-color: var(--stepping-stones-bright-color);
+}
 
 body > nav {
   max-width: min(1200px, calc(100% - 1.5rem));
@@ -311,8 +353,8 @@ ul#categories a {
 
 ul#categories img {
   width: 40px;
-  transform: scale(1);
-  transition: transform 0.2s;
+  border-radius: 50%;
+  transition: 0.2s;
 }
 
 ul#categories a.active img {
@@ -634,7 +676,7 @@ section.category-description > div {
   max-height: 250px;
 }
 
-.category-description .logo {
+.category-description .icon {
   width: 50px;
   justify-self: end;
 }
@@ -678,7 +720,7 @@ section.home {
     max-height: 220px;
   }
 
-  .category-description .logo {
+  .category-description .icon {
     width: 40px;
   }
 
@@ -769,7 +811,7 @@ section.home {
   flex: 1;
 }
 
-.card .logo {
+.card .icon {
   width: 32px;
   height: 32px;
   margin: 0 1rem 0 0;
