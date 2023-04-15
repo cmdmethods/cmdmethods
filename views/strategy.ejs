@@ -31,6 +31,9 @@
                         </section>
                         <% } else { %>
                             <section class="card grid-item <%= card.strategy%>" id="<%= card.id%>">
+                                <svg class="icon pin">
+                                    <use xlink:href="/img/icon-sprite.svg#pin" />
+                                </svg>
                                 <a href="/cards/<%= card.strategy%>/<%= card.id%>">
                                     <header>
                                         <img class="icon" src="/img/icon-<%= card.strategy%>.svg"
