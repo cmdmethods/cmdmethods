@@ -278,6 +278,7 @@ body > header .icon {
   position: fixed;
   top: 0.7rem;
   right: 1.8rem;
+  cursor: pointer;
 }
 #pinned-number {
   position: fixed;
@@ -292,6 +293,7 @@ body > header .icon {
   line-height: 1rem;
   text-align: center;
   color: white;
+  cursor: pointer;
 }
 
 @media (max-width: 480px) {
@@ -653,6 +655,13 @@ input[type='search'] {
   max-width: 1450px;
   margin: auto;
   display: grid;
+  grid-template-rows: auto auto auto;
+  /* grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); */
+  gap: 1rem;
+}
+
+.subgrid {
+  display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 2rem 1rem;
 }
@@ -884,8 +893,9 @@ section.home {
   stroke: var(--main-link-color);
   stroke-miterlimit: 10;
   transition: 0.3s;
+  cursor: pointer;
 }
-.pin:hover {
+.card .pin:hover:not(.pinned) {
   stroke-width: 1;
   fill: var(--neutral-bg-color);
 }
@@ -912,6 +922,10 @@ section.home {
 
 .card > a:first-child {
   flex: 1;
+}
+
+.card.hidden {
+  display: none;
 }
 
 /* =============================================================================

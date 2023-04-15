@@ -2,6 +2,13 @@ const arrify = require('array-back');
 const Card = require('../models/card');
 const config = require('../config/config.json');
 
+/** *****************************************************************************
+ * HOME
+ * get all cards including strategy description cards
+ * default sorting is fist by strategy, then alphabetical
+ * render page with "home" view
+ ******************************************************************************* */
+
 exports.getCards = (req, res, next) => {
     let cards;
     if (!req.query.sort || req.query.sort === 'strategy') {
@@ -16,6 +23,14 @@ exports.getCards = (req, res, next) => {
     }
 };
 
+/** *****************************************************************************
+ * STRATEGY
+ * get cards of strategy that is defined in url
+ * including strategy description card
+ * sorting is alphabetical
+ * render page with "strategy" view
+ ******************************************************************************* */
+
 exports.getCardsByStrategy = (req, res, next) => {
     const cards = Card.findByStrategy(req.params.strategy);
     if (cards.length > 0) {
@@ -27,6 +42,13 @@ exports.getCardsByStrategy = (req, res, next) => {
         next();
     }
 };
+
+/** *****************************************************************************
+ * CARD DETAILS
+ * get details of card with card-id that is defined in url
+ * also look up previous and next card to show as kind of carrousel
+ * render page with "carddetails" view
+ ******************************************************************************* */
 
 exports.getCardById = (req, res, next) => {
     const card = Card.findById(req.params.id);
@@ -44,6 +66,12 @@ exports.getCardById = (req, res, next) => {
     }
 };
 
+/** *****************************************************************************
+ * FILTERED CARDS
+ * get cards that comply with filters and sort them alphabetically
+ * render page with "filter-results" view
+ ******************************************************************************* */
+
 exports.filterCards = (req, res) => {
     const cards = Card.findByFilters(
         req.query.search || '',
@@ -56,6 +84,30 @@ exports.filterCards = (req, res) => {
         query: req.query,
     });
 };
+
+/** *****************************************************************************
+ * GET PINNED CARDS
+ * return alle cards sorted alphabetically, excluding strategy description cards
+ * a frontend js file will determine which cards are pinned and stored in local
+ * storage
+ * render page with "pinned" view
+ ******************************************************************************* */
+
+exports.getPinnedCards = (req, res) => {
+    const cards = Card.findAllSortedById();
+    res.render('pinned', {
+        strategy: '',
+        cardlist: cards
+    })
+};
+
+
+/** *****************************************************************************
+ * FILTER NUMBERS
+ * return json containing the number of cards in each strategy and dimension
+ * the json data can be used by frontend js to dynamically update filter numbers
+ * in filter form
+ ******************************************************************************* */
 
 exports.getFilterNumbers = (req, res) => {
     const filterNumbers = {};
@@ -79,3 +131,4 @@ exports.getFilterNumbers = (req, res) => {
     });
     res.json(filterNumbers);
 };
+

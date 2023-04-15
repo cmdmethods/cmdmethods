@@ -1,14 +1,63 @@
 const pins = document.querySelectorAll('.card .pin');
+const littleNumber = document.querySelector('#pinned-number');
+
+function createLocalStorage() {
+    // create local storage if it doesn't exist yet
+    if (!localStorage.getItem('pinned')) {
+        localStorage.setItem('pinned', JSON.stringify([]));
+    }
+}
+
+function updateAppearancePinnedCards() {
+    const pinned = JSON.parse(localStorage.getItem('pinned'));
+    // for pins that were already pinned in past, change appearance
+    pins.forEach((pin) => {
+        if (pinned.indexOf(pin.parentElement.id) >= 0) {
+            pin.classList.add('pinned');
+        }
+    });
+}
 
 function updateLittleNumber() {
     const pinned = JSON.parse(localStorage.getItem('pinned'));
-    document.querySelector('#pinned-number').innerHTML = pinned.length;
+    littleNumber.innerHTML = pinned.length;
+}
+
+function showOrMovePinnedCards() {
+    const page = document.querySelector('main').id;
+    const cards = document.querySelectorAll('.card');
+    const pinned = JSON.parse(localStorage.getItem('pinned'));
+    const pinnedSection = document.getElementById('pinned-cards');
+    cards.forEach((card) => {
+        switch (page) {
+            case 'strategy':
+                // if card is pinned, move it to top
+                if (pinned.indexOf(card.id) >= 0) {
+                    pinnedSection?.append(card);
+                }
+                break;
+            case 'home':
+                // if card is pinned, move it to top
+                if (pinned.indexOf(card.id) >= 0) {
+                    pinnedSection?.append(card);
+                }
+                break;
+            case 'pinned':
+                // if card is NOT pinned, hide it
+                if (pinned.indexOf(card.id) < 0) {
+                    card.classList.add('hidden');
+                }
+                break;
+            default:
+                // do nothing
+                break;
+            }
+    });
 }
 
 function animateLittleNumber() {
     document.querySelector('#flying-pin').remove();
     updateLittleNumber();
-    const littleNumber = document.querySelector('#pinned-number');
     littleNumber.classList.add('grow');
     littleNumber.addEventListener('animationend', () => {
         littleNumber.classList.remove('grow');
@@ -51,23 +100,14 @@ function handlePinClick(event) {
 }
 
 function init() {
-    // create local storage if it doesn't exist yet
-    if (!localStorage.getItem('pinned')) {
-        localStorage.setItem('pinned', JSON.stringify([]));
-    }
-    const pinned = JSON.parse(localStorage.getItem('pinned'));
-    // for pins that were already pinned in past, change appearance
-    pins.forEach((pin) => {
-        if (pinned.indexOf(pin.parentElement.id) >= 0) {
-            pin.classList.add('pinned');
-        }
-    });
+    createLocalStorage();
+    updateAppearancePinnedCards();
     updateLittleNumber();
+    showOrMovePinnedCards();
 }
 
 // handle click events on pins on cards
 if (pins) {
     pins.forEach((pin) => pin.addEventListener('click', handlePinClick));
 }
-
 init();

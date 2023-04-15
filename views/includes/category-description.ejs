@@ -1,0 +1,14 @@
+<section class="category-description <%= card.strategy %>">
+    <div>
+        <img class="icon flip flipable" src="/img/icon-<%= card.strategy%>.svg" alt="logo <%= card.strategy%>">
+        <h1>
+            <%= card.name %>
+        </h1>
+        <h3>Goal</h3>
+        <div>
+            <p><em><%- card.motto %></em></p>
+            <p><%- card.why %></p>
+        </div>
+    </div>
+    <img class="category-img" src="/img/<%= card.strategy%>.png" alt="research strategy <%= card.strategy%>">
+</section>
