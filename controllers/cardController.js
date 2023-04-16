@@ -17,7 +17,11 @@ exports.getCards = (req, res, next) => {
         cards = Card.findAllSortedById();
     }
     if (cards.length > 0) {
-        res.render('home', { strategy: 'home', cardlist: cards });
+        res.render('home', {
+            strategy: 'home',
+            cardlist: cards,
+            query: { dimension: [], strategy: [] },
+        });
     } else {
         next();
     }
@@ -37,6 +41,7 @@ exports.getCardsByStrategy = (req, res, next) => {
         res.render('strategy', {
             strategy: req.params.strategy,
             cardlist: cards,
+            query: { dimension: [], strategy: [] },
         });
     } else {
         next();
@@ -60,6 +65,7 @@ exports.getCardById = (req, res, next) => {
             card,
             previousCard,
             nextCard,
+            query: { dimension: [], strategy: [] },
         });
     } else {
         next();
@@ -73,11 +79,14 @@ exports.getCardById = (req, res, next) => {
  ******************************************************************************* */
 
 exports.filterCards = (req, res) => {
+    req.query.dimension = arrify(req.query.dimension);
+    req.query.strategy = arrify(req.query.strategy);
     const cards = Card.findByFilters(
         req.query.search || '',
-        arrify(req.query.dimension),
-        arrify(req.query.strategy)
+        req.query.dimension,
+        req.query.strategy
     );
+    console.log(req.query);
     res.render('filter-results', {
         strategy: '',
         cardlist: cards,
@@ -97,10 +106,10 @@ exports.getPinnedCards = (req, res) => {
     const cards = Card.findAllSortedById();
     res.render('pinned', {
         strategy: '',
-        cardlist: cards
-    })
+        cardlist: cards,
+        query: { dimension: [], strategy: [] },
+    });
 };
-
 
 /** *****************************************************************************
  * FILTER NUMBERS
@@ -131,4 +140,3 @@ exports.getFilterNumbers = (req, res) => {
     });
     res.json(filterNumbers);
 };
-
