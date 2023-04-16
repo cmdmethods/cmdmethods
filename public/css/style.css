@@ -210,7 +210,8 @@ input[type='checkbox'] {
 legend {
   font-style: italic;
 }
-.hidden {
+.hidden,
+main#pinned section#unpinned-cards {
   display: none;
   line-height: 0;
 }
@@ -269,10 +270,61 @@ body > header h2 {
   margin: 0;
   line-height: 1em;
 }
+body > header .icon {
+  width: 40px;
+  height: 40px;
+  fill: white;
+  stroke: white;
+  stroke-miterlimit: 10;
+  position: fixed;
+  top: 0.7rem;
+  right: 1.8rem;
+  cursor: pointer;
+}
+#pinned-number {
+  position: fixed;
+  top: 0.7rem;
+  right: 1.2rem;
+  z-index: 13;
+  background: var(--neutral-bright-color);
+  border-radius: 50%;
+  font-size: 0.7rem;
+  width: 1rem;
+  height: 1rem;
+  line-height: 1rem;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+}
 
 @media (max-width: 480px) {
   body > header {
     position: static;
+  }
+  body > header h2 {
+    margin-right: 70px;
+  }
+  #pinned-icon {
+    background-color: white;
+    z-index: 10;
+    border-radius: 50%;
+    padding: 0.5rem;
+    position: fixed;
+    top: 0.9rem;
+    right: 0.9rem;
+    width: 55px;
+    height: 55px;
+    box-shadow: 3px 3px 7px var(--shadow-dark-color);
+  }
+  #pinned-icon .icon {
+    fill: var(--main-link-color);
+    stroke: var(--main-link-color);
+    top: 1.3rem;
+    right: 1.3rem;
+  }
+  #pinned-number {
+    right: 0.7rem;
+    top: 1rem;
   }
 }
 
@@ -604,8 +656,13 @@ input[type='search'] {
   max-width: 1450px;
   margin: auto;
   display: grid;
+  gap: 2rem;
+}
+
+.subgrid {
+  display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1rem;
+  gap: 2rem 1rem;
 }
 
 @media (max-width: 1450px) {
@@ -808,6 +865,7 @@ section.home {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 }
 
 .card:hover {
@@ -826,7 +884,23 @@ section.home {
   height: 32px;
   margin: 0 1rem 0 0;
 }
-
+.card .pin {
+  position: absolute;
+  right: -1.7rem;
+  top: -1.5rem;
+  fill: white;
+  stroke: var(--main-link-color);
+  stroke-miterlimit: 10;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.card .pin:hover:not(.pinned) {
+  stroke-width: 1;
+  fill: var(--neutral-bg-color);
+}
+.card .pinned {
+  fill: var(--main-link-color);
+}
 .card h1 {
   margin: 0;
   line-height: 1em;
@@ -847,6 +921,10 @@ section.home {
 
 .card > a:first-child {
   flex: 1;
+}
+
+.card.hidden {
+  display: none;
 }
 
 /* =============================================================================
@@ -1112,8 +1190,19 @@ body > footer li {
 }
 
 /* =============================================================================
-    ANIMATIONS
+    TRANSITIONS AND ANIMATIONS
    =========================================================================== */
+#flying-pin {
+  transition: top 0.6s, right 0.6s, opacity 0.3s 0.3s;
+  position: fixed;
+  opacity: 1;
+  z-index: 100;
+}
+#flying-pin.fly {
+  opacity: 0;
+  top: 1rem !important;
+  right: 1rem !important;
+}
 
 @keyframes flip {
   from {
@@ -1148,23 +1237,101 @@ body > footer li {
     animation-timing-function: ease-in;
     opacity: 0;
   }
-
   40% {
     transform: perspective(max(725px, calc(100vw / 2)))
       rotate3d(1, 0, 0, -20deg);
     animation-timing-function: ease-in;
     opacity: 1;
   }
-
   65% {
     transform: perspective(max(725px, calc(100vw / 2))) rotate3d(1, 0, 0, 10deg);
   }
-
   85% {
     transform: perspective(max(725px, calc(100vw / 2))) rotate3d(1, 0, 0, -5deg);
   }
-
   to {
     transform: perspective(max(725px, calc(100vw / 2)));
   }
+}
+
+@keyframes grow {
+  from {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.grow {
+  animation-name: grow;
+  animation-timing-function: ease-in-out;
+  animation-duration: 1s;
+}
+
+@keyframes go-up {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  30% {
+    transform: scale(0.6) translateY(0px);
+    opacity: 0.7;
+  }
+  95% {
+    transform: translateY(-1000px);
+    opacity: 0.2;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.go-up {
+  animation-name: go-up;
+  animation-duration: 0.7s;
+}
+
+@keyframes go-down {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  30% {
+    transform: scale(0.6) translateY(0px);
+    opacity: 0.7;
+  }
+  95% {
+    transform: translateY(1000px);
+    opacity: 0.2;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.go-down {
+  animation-name: go-down;
+  animation-duration: 0.7s;
+}
+
+@keyframes disappear {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.disappear {
+  animation-name: disappear;
+  animation-duration: 0.7s;
 }

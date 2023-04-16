@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('includes/head'); %>
+</head>
+
+<body>
+    <%- include('includes/header'); %>
+
+        <main id="pinned">
+            <h1>My pinned cards</h1>
+            <div class="grid">
+                <section class="subgrid" id="unpinned-cards">
+
+                    <% cardlist.forEach((card)=> { %>
+                        <%- include('includes/card', {card: card}); %>
+                            <% }); %>
+
+                </section>
+            </div>
+        </main>
+
+
+        <%- include('includes/footer'); %>
+</body>
+
+</html>
