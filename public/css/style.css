@@ -656,8 +656,7 @@ input[type='search'] {
   max-width: 1450px;
   margin: auto;
   display: grid;
-  grid-template-rows: auto auto auto;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .subgrid {

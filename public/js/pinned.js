@@ -43,25 +43,59 @@ function getPinnedSection() {
                 document.getElementById('unpinned-cards').before(pinnedSection);
                 break;
             default:
-                document.body.prepend(pinnedSection)
+                document.body.prepend(pinnedSection);
                 break;
         }
     }
     return pinnedSection;
 }
 
+function addCardToSection(section, cardToInsert) {
+    // if section contains category description, add card below his category
+    // and put cards in alphabetical order within category
+    if (section.querySelector('.category-description')) {
+        const strategy = cardToInsert.classList[1];
+        const cards = section.querySelectorAll(`.card.${strategy}`);
+        for (let i = 0; i < cards.length; i += 1) {
+            if (cards[i].id > cardToInsert.id) {
+                cards[i].before(cardToInsert);
+                return;
+            }
+        }
+        if (cards.length === 0) {
+            section
+                .querySelector(`.category-description.${strategy}`)
+                .after(cardToInsert);
+        } else {
+            cards[cards.length - 1].after(cardToInsert);
+        }
+    } else {
+        // else just put card in alphabetical order
+        const cards = section.querySelectorAll('.card');
+        for (let i = 0; i < cards.length; i += 1) {
+            if (cards[i].id > cardToInsert.id) {
+                cards[i].before(cardToInsert);
+                return;
+            }
+        }
+        section.append(cardToInsert);
+    }
+}
+
 function movePinnedCardsToTop() {
     const cards = document.querySelectorAll('.card');
     const pinned = JSON.parse(localStorage.getItem('pinned'));
     cards.forEach((card) => {
+        // if card is pinned
         if (pinned.indexOf(card.id) >= 0) {
             const pinnedSection = getPinnedSection();
-            pinnedSection.append(card);
+            addCardToSection(pinnedSection, card);
         }
     });
 }
 
 function determineAnimation(pinning) {
+    // pinning is a boolean to indicate whether we are pinning or unpinning a card at the moment
     if (pinning) {
         switch (page) {
             case 'home':
@@ -89,14 +123,14 @@ function animateCard(cardId, pinning) {
     const card = document.getElementById(cardId);
     const animation = determineAnimation(pinning);
     card.classList.add(animation);
-    card.addEventListener('animationend', (e) => {
+    card.addEventListener('animationend', () => {
         card.classList.remove(animation);
         if (pinning) {
             const pinnedSection = getPinnedSection();
-            pinnedSection.append(card);
+            addCardToSection(pinnedSection, card);
         } else {
             const unpinnedSection = document.getElementById('unpinned-cards');
-            unpinnedSection.append(card);
+            addCardToSection(unpinnedSection, card);
         }
     });
 }
