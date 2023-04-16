@@ -13,9 +13,7 @@
 
                 <%- include('includes/category-description', {card: cardlist[0]}); %>
 
-                    <div id="pinned-cards" class="subgrid"></div>
-
-                    <div class="subgrid">
+                    <section id="unpinned-cards" class="subgrid">
                         <% cardlist.forEach((card)=> { %>
                             <% if (card.type!=="category-description" ) { %>
                                 <%- include('includes/card', {card: card}); %>
@@ -24,7 +22,7 @@
                                         <% }); %>
 
 
-                    </div>
+                    </section>
         </main>
 
 

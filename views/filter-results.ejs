@@ -12,7 +12,7 @@
             <h1>Search results for "<%= query.search %>"</h1>
             <% } %>
 
-                <main class="grid">
+                <main class="grid" id="filter-results">
                     <div class="subgrid">
                         <% cardlist.forEach(card=> { %>
                             <%- include('includes/card', {card: card}) %>

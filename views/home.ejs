@@ -26,9 +26,7 @@
                     </footer>
                 </section>
 
-                <div id="pinned-cards" class="subgrid"></div>
-
-                <div class="subgrid">
+                <section class="subgrid" id="unpinned-cards">
                     <% cardlist.forEach((card)=> { %>
                         <% if (card.type==="category-description" ) { %>
                             <%- include('includes/category-description', {card: card}); %>
@@ -37,7 +35,7 @@
                                         <% }; %>
                                             <% }); %>
 
-                </div>
+                </section>
             </div>
         </main>
 

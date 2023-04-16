@@ -9,14 +9,15 @@
     <%- include('includes/header'); %>
 
         <main id="pinned">
+            <h1>My pinned cards</h1>
             <div class="grid">
-                <div class="subgrid">
+                <section class="subgrid" id="unpinned-cards">
 
                     <% cardlist.forEach((card)=> { %>
                         <%- include('includes/card', {card: card}); %>
                             <% }); %>
 
-                </div>
+                </section>
             </div>
         </main>
 

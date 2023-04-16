@@ -1,5 +1,6 @@
 const pins = document.querySelectorAll('.card .pin');
 const littleNumber = document.querySelector('#pinned-number');
+const page = document.querySelector('main').id;
 
 function createLocalStorage() {
     // create local storage if it doesn't exist yet
@@ -23,35 +24,80 @@ function updateLittleNumber() {
     littleNumber.innerHTML = pinned.length;
 }
 
-function showOrMovePinnedCards() {
-    const page = document.querySelector('main').id;
-    const cards = document.querySelectorAll('.card');
-    const pinned = JSON.parse(localStorage.getItem('pinned'));
-    const pinnedSection = document.getElementById('pinned-cards');
-    cards.forEach((card) => {
+function getPinnedSection() {
+    // search for section for pinned cards
+    let pinnedSection = document.getElementById('pinned-cards');
+    // if not found, create it
+    if (!pinnedSection) {
+        pinnedSection = document.createElement('section');
+        pinnedSection.id = 'pinned-cards';
+        pinnedSection.classList.add('subgrid');
         switch (page) {
-            case 'strategy':
-                // if card is pinned, move it to top
-                if (pinned.indexOf(card.id) >= 0) {
-                    pinnedSection?.append(card);
-                }
-                break;
             case 'home':
-                // if card is pinned, move it to top
-                if (pinned.indexOf(card.id) >= 0) {
-                    pinnedSection?.append(card);
-                }
+                document.querySelector('section.home').after(pinnedSection);
+                break;
+            case 'strategy':
+                document.getElementById('unpinned-cards').before(pinnedSection);
                 break;
             case 'pinned':
-                // if card is NOT pinned, hide it
-                if (pinned.indexOf(card.id) < 0) {
-                    card.classList.add('hidden');
-                }
+                document.getElementById('unpinned-cards').before(pinnedSection);
                 break;
             default:
-                // do nothing
+                document.body.prepend(pinnedSection)
                 break;
-            }
+        }
+    }
+    return pinnedSection;
+}
+
+function movePinnedCardsToTop() {
+    const cards = document.querySelectorAll('.card');
+    const pinned = JSON.parse(localStorage.getItem('pinned'));
+    cards.forEach((card) => {
+        if (pinned.indexOf(card.id) >= 0) {
+            const pinnedSection = getPinnedSection();
+            pinnedSection.append(card);
+        }
+    });
+}
+
+function determineAnimation(pinning) {
+    if (pinning) {
+        switch (page) {
+            case 'home':
+                return 'go-up';
+            case 'strategy':
+                return 'go-up';
+            default:
+                return '';
+        }
+    } else {
+        switch (page) {
+            case 'home':
+                return 'go-down';
+            case 'strategy':
+                return 'go-down';
+            case 'pinned':
+                return 'disappear';
+            default:
+                return '';
+        }
+    }
+}
+
+function animateCard(cardId, pinning) {
+    const card = document.getElementById(cardId);
+    const animation = determineAnimation(pinning);
+    card.classList.add(animation);
+    card.addEventListener('animationend', (e) => {
+        card.classList.remove(animation);
+        if (pinning) {
+            const pinnedSection = getPinnedSection();
+            pinnedSection.append(card);
+        } else {
+            const unpinnedSection = document.getElementById('unpinned-cards');
+            unpinnedSection.append(card);
+        }
     });
 }
 
@@ -59,29 +105,28 @@ function animateLittleNumber() {
     document.querySelector('#flying-pin').remove();
     updateLittleNumber();
     littleNumber.classList.add('grow');
-    littleNumber.addEventListener('animationend', () => {
-        littleNumber.classList.remove('grow');
-    });
 }
 
 function fly() {
     const pin = document.querySelector('#flying-pin');
     pin.classList.add('fly');
-    setTimeout(animateLittleNumber, 600);
 }
 
-function animatePin(startX, startY) {
+function startFlying(event, cardID, pinning) {
+    // create flying pin element
     const pin = document.createElement('img');
     pin.src = '/img/pin.png';
     pin.id = 'flying-pin';
-    pin.style.width = 32;
-    pin.style.right = `calc(100vw - ${startX}px)`;
-    pin.style.top = `${startY}px`;
+    pin.style.right = `calc(100vw - ${event.clientX}px)`;
+    pin.style.top = `${event.clientY}px`;
     document.body.appendChild(pin);
     // tiny delay is necessary to start transition :(
     setTimeout(fly, 1);
+    setTimeout(animateLittleNumber, 600);
+    setTimeout(animateCard, 1400, cardID, pinning);
 }
 
+// use local storage on client to remember which cards are pinned
 function updateLocalStorage(idCard) {
     const pinned = JSON.parse(localStorage.getItem('pinned'));
     const index = pinned.indexOf(idCard);
@@ -93,21 +138,31 @@ function updateLocalStorage(idCard) {
     localStorage.setItem('pinned', JSON.stringify(pinned));
 }
 
+// every time a pin is clicked do the following
 function handlePinClick(event) {
-    updateLocalStorage(this.parentElement.id);
+    const cardID = event.currentTarget.parentElement.id;
     this.classList.toggle('pinned');
-    animatePin(event.clientX, event.clientY);
+    const pinning = this.classList.contains('pinned');
+    updateLocalStorage(cardID);
+    startFlying(event, cardID, pinning);
 }
 
+// at page load
 function init() {
     createLocalStorage();
-    updateAppearancePinnedCards();
     updateLittleNumber();
-    showOrMovePinnedCards();
+    updateAppearancePinnedCards();
+    if (page === 'home' || page === 'strategy' || page === 'pinned') {
+        movePinnedCardsToTop();
+    }
+    littleNumber.addEventListener('animationend', () => {
+        littleNumber.classList.remove('grow');
+    });
 }
 
 // handle click events on pins on cards
 if (pins) {
     pins.forEach((pin) => pin.addEventListener('click', handlePinClick));
 }
+
 init();

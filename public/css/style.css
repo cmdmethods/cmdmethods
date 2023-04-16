@@ -210,7 +210,8 @@ input[type='checkbox'] {
 legend {
   font-style: italic;
 }
-.hidden {
+.hidden,
+main#pinned section#unpinned-cards {
   display: none;
   line-height: 0;
 }
@@ -656,7 +657,6 @@ input[type='search'] {
   margin: auto;
   display: grid;
   grid-template-rows: auto auto auto;
-  /* grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); */
   gap: 1rem;
 }
 
@@ -1238,22 +1238,18 @@ body > footer li {
     animation-timing-function: ease-in;
     opacity: 0;
   }
-
   40% {
     transform: perspective(max(725px, calc(100vw / 2)))
       rotate3d(1, 0, 0, -20deg);
     animation-timing-function: ease-in;
     opacity: 1;
   }
-
   65% {
     transform: perspective(max(725px, calc(100vw / 2))) rotate3d(1, 0, 0, 10deg);
   }
-
   85% {
     transform: perspective(max(725px, calc(100vw / 2))) rotate3d(1, 0, 0, -5deg);
   }
-
   to {
     transform: perspective(max(725px, calc(100vw / 2)));
   }
@@ -1275,4 +1271,68 @@ body > footer li {
   animation-name: grow;
   animation-timing-function: ease-in-out;
   animation-duration: 1s;
+}
+
+@keyframes go-up {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  30% {
+    transform: scale(0.6) translateY(0px);
+    opacity: 0.7;
+  }
+  95% {
+    transform: translateY(-1000px);
+    opacity: 0.2;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.go-up {
+  animation-name: go-up;
+  animation-duration: 0.7s;
+}
+
+@keyframes go-down {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  30% {
+    transform: scale(0.6) translateY(0px);
+    opacity: 0.7;
+  }
+  95% {
+    transform: translateY(1000px);
+    opacity: 0.2;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.go-down {
+  animation-name: go-down;
+  animation-duration: 0.7s;
+}
+
+@keyframes disappear {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.disappear {
+  animation-name: disappear;
+  animation-duration: 0.7s;
 }
