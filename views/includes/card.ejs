@@ -15,19 +15,19 @@
         <% if (card.sliders) { %>
             <div class="sliders">
                 <div>
-                    <label>inspiration</label>
-                    <input type="range" disabled value="<%= card.sliders.inspiration_data %>">
-                    <label>data</label>
+                    <span class="label">inspiration</span>
+                    <span class="amount" data-amount="<%= card.sliders.inspiration_data %>"></span>
+                    <span class="label">data</span>
                 </div>
                 <div>
-                    <label>expertise</label>
-                    <input type="range" disabled value="<%= card.sliders.expertise_fit %>">
-                    <label>fit</label>
+                    <span class="label">expertise</span>
+                    <span class="amount" data-amount="<%= card.sliders.expertise_fit %>"></span>
+                    <span class="label">fit</span>
                 </div>
                 <div>
-                    <label>overview</label>
-                    <input type="range" disabled value="<%= card.sliders.overview_certainty %>">
-                    <label>certainty</label>
+                    <span class="label">overview</span>
+                    <span class="amount" data-amount="<%= card.sliders.overview_certainty %>"></span>
+                    <span class="label">certainty</span>
                 </div>
             </div>
             <% } %>
