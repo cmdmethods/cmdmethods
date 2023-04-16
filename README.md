@@ -4,7 +4,7 @@
 
 You can visit the web application at [cmdmethods.nl](https://cmdmethods.nl)
 
-![Screenshot cmdmethods.nl](https://raw.githubusercontent.com/cmdmethods/cmdmethods/assets/screenshot-cmd-methods.png)
+![Screenshot cmdmethods.nl](https://github.com/cmdmethods/cmdmethods/blob/14-goede-readme-maken/assets/screenshot-cmd-methods.png?raw=true)
 
 ## :rocket: Installation
 
@@ -50,7 +50,7 @@ If you have technical skills, feel free to open an issue, or do a pull request. 
 
 If you would like to create your own version of CMD Methods, you can! Please check out our [licences](#Licence). People have already preceded you, for example [ICT Research Method](https://ictresearchmethods.nl/Main_Page)
 
-## :gem: People
+## :hamster: People
 
 The original author and current maintainer of this code is [Sonja Rouwhorst](https://github.com/rouws)
 
