@@ -13,7 +13,6 @@
     </a>
 </header>
 
-
 <nav>
     <ul id="categories">
         <li><a class="home <% if(strategy=='home') { %> <%= 'active' %> <% } %>" href="/"><img
@@ -83,49 +82,58 @@
     <form action="/cards" method="GET">
         <fieldset id="filter-dimensions">
             <label for="filter-inspiration">
-                <input type="checkbox" name="dimension" id="filter-inspiration" value="inspiration">
-                <strong>I want to be inspired
-                    <span class="filterNumber" data-filter="inspiration"></span>
-                </strong>
-                <p>In need of some inspiration? Acquire rich insights that will further your design.</p>
+                <input type="checkbox" name="dimension" id="filter-inspiration" value="inspiration" <% if
+                    (query.dimension.includes('inspiration')) { %>
+                checked="checked" <% } %> >
+                    <strong>I want to be inspired
+                        <span class="filterNumber" data-filter="inspiration"></span>
+                    </strong>
+                    <p>In need of some inspiration? Acquire rich insights that will further your design.</p>
             </label>
             <label for="filter-data">
-                <input type="checkbox" name="dimension" id="filter-data" value="data">
-                <strong>I want to collect data
-                    <span class="filterNumber" data-filter="data"></span>
-                </strong>
-                <p>Want to increase your designs credibility? Collect some data!</p>
+                <input type="checkbox" name="dimension" id="filter-data" value="data" <% if
+                    (query.dimension.includes('data')) { %> checked="checked" <% } %> >
+                    <strong>I want to collect data
+                        <span class="filterNumber" data-filter="data"></span>
+                    </strong>
+                    <p>Want to increase your designs credibility? Collect some data!</p>
             </label>
             <label for="filter-expertise">
-                <input type="checkbox" name="dimension" id="filter-expertise" value="expertise">
-                <strong>I want expertise
-                    <span class="filterNumber" data-filter="expertise"></span>
-                </strong>
-                <p>Want to build on existing expertise and knowledge? Look no further.</p>
+                <input type="checkbox" name="dimension" id="filter-expertise" value="expertise" <% if
+                    (query.dimension.includes('expertise')) { %> checked="checked" <% } %> >
+                    <strong>I want expertise
+                        <span class="filterNumber" data-filter="expertise"></span>
+                    </strong>
+                    <p>Want to build on existing expertise and knowledge? Look no further.</p>
             </label>
             <label for="filter-fit">
-                <input type="checkbox" name="dimension" id="filter-fit" value="fit">
-                <strong>I want fit advice
-                    <span class="filterNumber" data-filter="fit"></span>
-                </strong>
-                <p>Losing touch with your applications context? Research if your design is relevant and fit for use.</p>
+                <input type="checkbox" name="dimension" id="filter-fit" value="fit" <% if
+                    (query.dimension.includes('fit')) { %> checked="checked" <% } %> >
+                    <strong>I want fit advice
+                        <span class="filterNumber" data-filter="fit"></span>
+                    </strong>
+                    <p>Losing touch with your applications context? Research if your design is relevant and
+                        fit for use.</p>
             </label>
             <label for="filter-overview">
-                <input type="checkbox" name="dimension" id="filter-overview" value="overview">
-                <strong>I want to get an overview
-                    <span class="filterNumber" data-filter="overview"></span>
-                </strong>
-                <p>
-                    Looking for a complete picture of the situation, without getting into to many specifics? This one is
-                    for you!
-                </p>
+                <input type="checkbox" name="dimension" id="filter-overview" value="overview" <% if
+                    (query.dimension.includes('overview')) { %> checked="checked" <% } %> >
+                    <strong>I want to get an overview
+                        <span class="filterNumber" data-filter="overview"></span>
+                    </strong>
+                    <p>
+                        Looking for a complete picture of the situation, without getting into to many
+                        specifics? This one is for you!
+                    </p>
             </label>
             <label for="filter-certainty">
-                <input type="checkbox" name="dimension" id="filter-certainty" value="certainty">
-                <strong>I want to get certainty
-                    <span class="filterNumber" data-filter="certainty"></span>
-                </strong>
-                <p>Want to be certain that something works and identify cause and effect? Let’s get more specific!</p>
+                <input type="checkbox" name="dimension" id="filter-certainty" value="certainty" <% if
+                    (query.dimension.includes('certainty')) { %> checked="checked" <% } %> >
+                    <strong>I want to get certainty
+                        <span class="filterNumber" data-filter="certainty"></span>
+                    </strong>
+                    <p>Want to be certain that something works and identify cause and effect? Let’s get more
+                        specific!</p>
             </label>
         </fieldset>
 
@@ -133,46 +141,52 @@
         <fieldset id="filter-strategies">
             <legend>Filter research strategies:</legend>
             <label for="filter-library">
-                <input type="checkbox" name="strategy" id="filter-library" value="library">
-                <img src="/img/icon-library.svg" alt="library icon">
-                <p>Library
-                    <span class="filterNumber" data-filter="library"></span>
-                </p>
+                <input type="checkbox" name="strategy" id="filter-library" value="library" <% if
+                    (query.strategy.includes('library')) { %> checked="checked" <% } %> >
+                    <img src="/img/icon-library.svg" alt="library icon">
+                    <p>Library
+                        <span class="filterNumber" data-filter="library"></span>
+                    </p>
             </label>
             <label for="filter-field">
-                <input type="checkbox" name="strategy" id="filter-field" value="field">
-                <img src="/img/icon-field.svg" alt="field icon">
-                <p>Field
-                    <span class="filterNumber" data-filter="field"></span>
-                </p>
+                <input type="checkbox" name="strategy" id="filter-field" value="field" <% if
+                    (query.strategy.includes('field')) { %> checked="checked" <% } %> >
+                    <img src="/img/icon-field.svg" alt="field icon">
+                    <p>Field
+                        <span class="filterNumber" data-filter="field"></span>
+                    </p>
             </label>
             <label for="filter-lab">
-                <input type="checkbox" name="strategy" id="filter-lab" value="lab">
-                <img src="/img/icon-lab.svg" alt="lab icon">
-                <p>Lab
-                    <span class="filterNumber" data-filter="lab"></span>
-                </p>
+                <input type="checkbox" name="strategy" id="filter-lab" value="lab" <% if
+                    (query.strategy.includes('lab')) { %> checked="checked" <% } %> >
+                    <img src="/img/icon-lab.svg" alt="lab icon">
+                    <p>Lab
+                        <span class="filterNumber" data-filter="lab"></span>
+                    </p>
             </label>
             <label for="filter-showroom">
-                <input type="checkbox" name="strategy" id="filter-showroom" value="showroom">
-                <img src="/img/icon-showroom.svg" alt="showroom icon">
-                <p>Showroom
-                    <span class="filterNumber" data-filter="showroom"></span>
-                </p>
+                <input type="checkbox" name="strategy" id="filter-showroom" value="showroom" <% if
+                    (query.strategy.includes('showroom')) { %> checked="checked" <% } %> >
+                    <img src="/img/icon-showroom.svg" alt="showroom icon">
+                    <p>Showroom
+                        <span class="filterNumber" data-filter="showroom"></span>
+                    </p>
             </label>
             <label for="filter-workshop">
-                <input type="checkbox" name="strategy" id="filter-workshop" value="workshop">
-                <img src="/img/icon-workshop.svg" alt="workshop icon">
-                <p>Workshop
-                    <span class="filterNumber" data-filter="workshop"></span>
-                </p>
+                <input type="checkbox" name="strategy" id="filter-workshop" value="workshop" <% if
+                    (query.strategy.includes('workshop')) { %> checked="checked" <% } %> >
+                    <img src="/img/icon-workshop.svg" alt="workshop icon">
+                    <p>Workshop
+                        <span class="filterNumber" data-filter="workshop"></span>
+                    </p>
             </label>
             <label for="filter-stepping-stones2">
-                <input type="checkbox" name="strategy" id="filter-stepping-stones2" value="stepping-stones">
-                <img src="/img/icon-stepping-stones.svg" alt="stepping-stones icon">
-                <p>Stepping Stones
-                    <span class="filterNumber" data-filter="stepping-stones"></span>
-                </p>
+                <input type="checkbox" name="strategy" id="filter-stepping-stones2" value="stepping-stones" <% if
+                    (query.strategy.includes('stepping-stones')) { %> checked="checked" <% } %> >
+                    <img src="/img/icon-stepping-stones.svg" alt="stepping-stones icon">
+                    <p>Stepping Stones
+                        <span class="filterNumber" data-filter="stepping-stones"></span>
+                    </p>
             </label>
         </fieldset>
 
