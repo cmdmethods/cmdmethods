@@ -4,7 +4,7 @@
 
 You can visit the web application at [cmdmethods.nl](https://cmdmethods.nl)
 
-![Screenshot cmdmethods.nl](https://github.com/cmdmethods/cmdmethods/blob/14-goede-readme-maken/assets/screenshot-cmd-methods.png?raw=true)
+![Screenshot cmdmethods.nl](https://github.com/cmdmethods/cmdmethods/blob/main/assets/screenshot-cmd-methods.png?raw=true)
 
 ## :rocket: Installation
 
