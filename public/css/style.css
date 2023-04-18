@@ -2,6 +2,19 @@
     author: Sonja Rouwhorst
    =========================================================================== */
 
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../assets/OpenSans-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans Light';
+  src: url('../assets/OpenSans-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans Condensed';
+  src: url('../assets/OpenSans-CondLight.ttf') format('truetype');
+}
+
 /*  =============================================================================
     COLORS
     =========================================================================== */
@@ -88,8 +101,7 @@
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
+  font-family: 'Open Sans light', sans-serif;
   background: var(--main-bg-color);
   overflow-x: hidden;
 }
@@ -109,7 +121,6 @@ h4,
 h5,
 h6 {
   font-family: 'Open Sans Condensed', sans-serif;
-  font-weight: 700;
 }
 
 h2 {
@@ -534,8 +545,9 @@ input[type='search'] {
   position: absolute;
   padding: 1rem;
   border-radius: 0.8rem;
-  right: -850px;
+  right: 2em;
   z-index: 1001;
+  transform: translateX(calc(100% + 4em));
   max-width: min(80vw, 800px);
   transition: 0.3s;
 }
@@ -614,7 +626,7 @@ input[type='search'] {
   width: 40px;
 }
 #filter-options.come-in {
-  right: 0.8rem;
+  transform: translateX(0);
 }
 #overlay {
   background-color: rgba(0, 0, 0, 0.6);
@@ -700,7 +712,9 @@ input[type='search'] {
 .category-description.home {
   background-color: var(--home-bg-color);
 }
-
+.category-description.home + #unpinned-cards {
+  margin-top: -2em;
+}
 section.category-description {
   display: flex;
   justify-content: space-between;
@@ -729,12 +743,13 @@ section.category-description > div {
   align-self: center;
 }
 
-.category-description h3 {
+.category-description h2 {
   font-weight: 900;
   color: black;
   line-height: 1em;
   margin: 0;
   justify-self: end;
+  font-size: 1.2em;
 }
 
 .category-img {
