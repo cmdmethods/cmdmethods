@@ -1139,7 +1139,7 @@
         }
     },
 
-    {
+{
         "type": "card",
         "status": "active",
         "id": "thoughtwalking",
@@ -1162,14 +1162,14 @@
             "inspiration_data": 25,
             "expertise_fit": 50,
             "overview_certainty": 50
-        }
-        " useful_resources": [
-    "Thabane, A. et al. (2026). <cite>The impact of walking on creative thinking: A systematic review and meta-analysis.</cite> PLOS ONE. A systematic review and meta-analysis of 23 studies examining the effects of walking on creative thinking. <a href=\"https://doi.org/10.1371/journal.pone.0347878\" target=\"_blank\">https://doi.org/10.1371/journal.pone.0347878</a>",
-    "Oppezzo, M. & Schwartz, D. L. (2014). <cite>Give Your Ideas Some Legs: The Positive Effect of Walking on Creative Thinking.</cite> Journal of Experimental Psychology: Learning, Memory, and Cognition, 40(4), 1142–1152. Experimental research investigating the effects of walking on creative idea generation. <a href=\"https://doi.org/10.1037/a0036577\" target=\"_blank\">https://doi.org/10.1037/a0036577</a>",
-    "Glogger-Frey, I. et al. (2024). <cite>Coherence building while reading multiple complementary documents.</cite> Contemporary Educational Psychology, 77, 102266. Research comparing self-explanation with thinking aloud, finding that self-explanation instructions produced more cohesive responses. Relevant to verbalising and organising thoughts, although the study focused on learning rather than creative ideation. <a href=\"https://doi.org/10.1016/j.cedpsych.2024.102266\" target=\"_blank\">https://doi.org/10.1016/j.cedpsych.2024.102266</a>",
-    "Fox, M. C., Ericsson, K. A. & Best, R. (2011). <cite>Do Procedures for Verbal Reporting of Thinking Have to Be Reactive? A Meta-Analysis and Recommendations for Best Reporting Methods.</cite> Psychological Bulletin, 137(2), 316–344. A meta-analysis examining whether verbalising thoughts changes cognitive performance. Useful methodological background for thinking aloud, but not direct evidence that it improves creativity. <a href=\"https://doi.org/10.1037/a0021663\" target=\"_blank\">https://doi.org/10.1037/a0021663</a>",
-    "Ericsson, K. A. & Simon, H. A. (1980). <cite>Verbal Reports as Data.</cite> Psychological Review, 87(3), 215–251. A foundational paper on using verbal reports to study people's thought processes. <a href=\"https://doi.org/10.1037/0033-295X.87.3.215\" target=\"_blank\">https://doi.org/10.1037/0033-295X.87.3.215</a>"
-]
+        },
+        "useful_resources": [
+            "Thabane, A. et al. (2026). <cite>The impact of walking on creative thinking: A systematic review and meta-analysis.</cite> PLOS ONE. A systematic review and meta-analysis of 23 studies examining the effects of walking on creative thinking. <a href=\"https://doi.org/10.1371/journal.pone.0347878\" target=\"_blank\">https://doi.org/10.1371/journal.pone.0347878</a>",
+            "Oppezzo, M. & Schwartz, D. L. (2014). <cite>Give Your Ideas Some Legs: The Positive Effect of Walking on Creative Thinking.</cite> Journal of Experimental Psychology: Learning, Memory, and Cognition, 40(4), 1142–1152. Experimental research investigating the effects of walking on creative idea generation. <a href=\"https://doi.org/10.1037/a0036577\" target=\"_blank\">https://doi.org/10.1037/a0036577</a>",
+            "Glogger-Frey, I. et al. (2024). <cite>Coherence building while reading multiple complementary documents.</cite> Contemporary Educational Psychology, 77, 102266. Research comparing self-explanation with thinking aloud, finding that self-explanation instructions produced more cohesive responses. Relevant to verbalising and organising thoughts, although the study focused on learning rather than creative ideation. <a href=\"https://doi.org/10.1016/j.cedpsych.2024.102266\" target=\"_blank\">https://doi.org/10.1016/j.cedpsych.2024.102266</a>",
+            "Fox, M. C., Ericsson, K. A. & Best, R. (2011). <cite>Do Procedures for Verbal Reporting of Thinking Have to Be Reactive? A Meta-Analysis and Recommendations for Best Reporting Methods.</cite> Psychological Bulletin, 137(2), 316–344. A meta-analysis examining whether verbalising thoughts changes cognitive performance. Useful methodological background for thinking aloud, but not direct evidence that it improves creativity. <a href=\"https://doi.org/10.1037/a0021663\" target=\"_blank\">https://doi.org/10.1037/a0021663</a>",
+            "Ericsson, K. A. & Simon, H. A. (1980). <cite>Verbal Reports as Data.</cite> Psychological Review, 87(3), 215–251. A foundational paper on using verbal reports to study people's thought processes. <a href=\"https://doi.org/10.1037/0033-295X.87.3.215\" target=\"_blank\">https://doi.org/10.1037/0033-295X.87.3.215</a>"
+        ]
     },
     {
         "type": "card",
