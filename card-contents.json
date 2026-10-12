@@ -970,9 +970,9 @@
         ],
         "in_practice": "Ideation sessions, individual or in groups are part of most design processes. Examples of common techniques are: using analogies and metaphors to find inspiration, organizing a brainstorm, or using “how-to” questions to come up with ideas.",
         "sliders": {
-            "inspiration_data": 15,
-            "expertise_fit": 35,
-            "overview_certainty": 25
+            "inspiration_data": 5,
+            "expertise_fit": 50,
+            "overview_certainty": 50
         },
         "useful_resources": [
             "<cite>Universal Methods of Design</cite> has several chapters on creativity techniques such as chapter 07 (Bodystorming), 08 (Brainstorm Inforgraphics). P20-22 and 56 (Mindmapping), p118-119",
@@ -1145,7 +1145,7 @@
         "id": "thoughtwalking",
         "name": "Thoughtwalking",
         "strategy": "workshop",
-        "image": "/img/cards/work-thoughtwalking.jpg",
+        "image": "/img/cards/work-thoughtwalking.png",
         "image_width": 275,
         "image_height": 330,
         "why": "Generate and develop new ideas by combining physical movement, thinking aloud and the active use of research insights to explore potential design directions.",
@@ -1159,9 +1159,9 @@
         ],
         "in_practice": "Thoughtwalking can be used individually when a designer feels creatively stuck, wants to explore out of the box ideas or needs to develop initial concept directions. Walking has been associated with improved performance in divergent-thinking tasks, which involve generating multiple ideas. The ideas generated can be organised, evaluated and developed further at the workspace.",
         "sliders": {
-            "inspiration_data": 25,
-            "expertise_fit": 50,
-            "overview_certainty": 50
+            "inspiration_data": 15,
+            "expertise_fit": 45,
+            "overview_certainty": 35
         },
         "useful_resources": [
             "Thabane, A. et al. (2026). <cite>The impact of walking on creative thinking: A systematic review and meta-analysis.</cite> PLOS ONE. A systematic review and meta-analysis of 23 studies examining the effects of walking on creative thinking. <a href=\"https://doi.org/10.1371/journal.pone.0347878\" target=\"_blank\">https://doi.org/10.1371/journal.pone.0347878</a>",
